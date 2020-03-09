@@ -12,7 +12,7 @@
 <jsp:useBean id="utente" scope="session" class="donapp.model.Utente" />
 <jsp:setProperty property="*" name="utente"/>
 <jsp:getProperty property="username" name="utente"/>
-<button type="button" value="<%session.invalidate();%>">Log out!</button>
-
+<form action="Logout" method="post">
+<input type="submit" value="Logout"></form>
 </body>
 </html>
