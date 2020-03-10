@@ -20,7 +20,7 @@ public class UtenteDaoImpl implements UtenteDao {
 	public PreparedStatement deletePs;
 	public PreparedStatement selectPs;
 	public PreparedStatement loginPs;
-	//COSTRUTTORE
+	//COSTRUTTOREa
 	public UtenteDaoImpl() {
 		String insertQry = " INSERT INTO utente (username, password, nome, cognome, email) "
 				+ "VALUES (?,?,?,?,?)";

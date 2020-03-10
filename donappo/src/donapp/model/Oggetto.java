@@ -13,7 +13,7 @@ public class Oggetto {
 	private Integer idCategoria;
 	
 	
-	//TO STRING
+	//TO STRINGa
 	@Override
 	public String toString() {
 		return "Oggetto\n[idOggetto=" + idOggetto + ",\nfoto=" + foto + ",\nnome=" + nome + ",\ncolore=" + colore

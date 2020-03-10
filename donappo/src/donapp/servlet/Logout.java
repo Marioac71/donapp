@@ -20,7 +20,7 @@ public class Logout extends HttpServlet {
      */
     public Logout() {
         super();
-        // TODO Auto-generated constructor stub
+        // TODO Auto-generated constructor stuba
     }
 
 	/**

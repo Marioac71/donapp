@@ -18,7 +18,7 @@ public class CategoriaDaoImpl implements CategoriaDao {
 	private PreparedStatement deletePs;
 	private PreparedStatement selectPsCat;
 	private PreparedStatement selectPsAllCat;
-	//COSTRUTTORE
+	//COSTRUTTOREa
 	public CategoriaDaoImpl() {
 		String insertQry="INSERT INTO categoria (idcategoria,nome) "
 				+ "VALUES (?,?)";

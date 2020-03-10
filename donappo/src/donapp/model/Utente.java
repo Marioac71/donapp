@@ -15,7 +15,7 @@ public class Utente {
 				+ ",\nemail=" + email + "]\n";
 	}
 
-	//COSTRUTTORE SENZA PARAMETRI
+	//COSTRUTTORE SENZA PAaRAMETRI
 	public Utente() {
 		
 	}

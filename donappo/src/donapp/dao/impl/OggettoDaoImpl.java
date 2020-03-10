@@ -20,7 +20,7 @@ public class OggettoDaoImpl implements OggettoDao {
 	private PreparedStatement prenotaPsOgg;
 	private PreparedStatement cancellaPsPren;
 	
-	//COSTRUTTORE
+	//COSTRUTTOREa
 	public OggettoDaoImpl() {
 		String insertQry = "INSERT INTO oggetto (foto,nome,colore,descrizione,luogoritiro"
 				+ ",disponibilita,idproprietario,idprenotante,idcategoria) "

@@ -6,7 +6,7 @@ public class Categoria {
 	
 	
 	
-	//TO STRING
+	//TO STRINGa
 	@Override
 	public String toString() {
 		return "Categoria\n[idCategoria=" + idCategoria + ",\nnome=" + nome + "]\n";

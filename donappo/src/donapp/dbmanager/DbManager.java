@@ -22,7 +22,7 @@ import java.sql.SQLException;
 //		}
 //		
 //	}
-//	
+//	a
 //	public static DbManager getInstance() {
 //		
 //		if (ref==null) {
