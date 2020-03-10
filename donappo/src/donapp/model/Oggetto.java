@@ -1,7 +1,7 @@
 package donapp.model;
 
 public class Oggetto {
-	private int idOggetto;
+	private Integer idOggetto;
 	private String foto;
 	private String nome;
 	private String colore;
@@ -10,7 +10,7 @@ public class Oggetto {
 	private String disponibilita;
 	private String idProprietario;
 	private String idPrenotante;
-	private int idCategoria;
+	private Integer idCategoria;
 	
 	
 	//TO STRING
@@ -18,7 +18,7 @@ public class Oggetto {
 	public String toString() {
 		return "Oggetto\n[idOggetto=" + idOggetto + ",\nfoto=" + foto + ",\nnome=" + nome + ",\ncolore=" + colore
 				+ ",\ndescrizione=" + descrizione + ",\nluogoRitiro=" + luogoRitiro + ",\ndisponibilita=" + disponibilita
-				+ ",\nidProprietario=" + idProprietario + ",\nidPrenotante=" + idPrenotante + ",\nidCategoria="
+				+ ",\nidProprietario=" + idProprietario + ",\2nidPrenotante=" + idPrenotante + ",\nidCategoria="
 				+ idCategoria + "]\n";
 	}
 
@@ -28,8 +28,8 @@ public class Oggetto {
 	}
 	
 	//COSTRUTTORE CON PARAMETRI
-	public Oggetto(int idOggetto, String foto, String nome, String colore, String descrizione, String luogoRitiro,
-			String disponibilita, String idProprietario, String idPrenotante, int idCategoria) {
+	public Oggetto(Integer idOggetto, String foto, String nome, String colore, String descrizione, String luogoRitiro,
+			String disponibilita, String idProprietario, String idPrenotante, Integer idCategoria) {
 		super();
 		this.idOggetto = idOggetto;
 		this.foto = foto;
@@ -43,10 +43,10 @@ public class Oggetto {
 		this.idCategoria = idCategoria;
 	}
 	//SETTER E GETTER
-	public int getIdOggetto() {
+	public Integer getIdOggetto() {
 		return idOggetto;
 	}
-	public void setIdOggetto(int idOggetto) {
+	public void setIdOggetto(Integer idOggetto) {
 		this.idOggetto = idOggetto;
 	}
 	public String getFoto() {
@@ -97,10 +97,10 @@ public class Oggetto {
 	public void setIdPrenotante(String idPrenotante) {
 		this.idPrenotante = idPrenotante;
 	}
-	public int getIdCategoria() {
+	public Integer getIdCategoria() {
 		return idCategoria;
 	}
-	public void setIdCategoria(int idCategoria) {
+	public void setIdCategoria(Integer idCategoria) {
 		this.idCategoria = idCategoria;
 	}
 	

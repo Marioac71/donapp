@@ -12,7 +12,7 @@ import donapp.model.Oggetto;
 public class OggettoDaoImpl implements OggettoDao {
 	
 	DbManager db;
-	private PreparedStatement insertPs;
+	public PreparedStatement insertPs;
 	private PreparedStatement updatePs;
 	private PreparedStatement deletePs;
 	private PreparedStatement searchPsAllOgg;
@@ -22,9 +22,9 @@ public class OggettoDaoImpl implements OggettoDao {
 	
 	//COSTRUTTORE
 	public OggettoDaoImpl() {
-		String insertQry = "INSERT INTO oggetto (idoggetto,foto,nome,colore,descrizione,luogo_ritiro"
+		String insertQry = "INSERT INTO oggetto (foto,nome,colore,descrizione,luogoritiro"
 				+ ",disponibilita,idproprietario,idprenotante,idcategoria) "
-				+ "VALUES (?,?,?,?,?,?,?,?,?,?)";
+				+ "VALUES (?,?,?,?,?,?,?,?,?)";
 		
 		String updateQry = "UPDATE oggetto "
 				+ "SET idoggetto=?,foto=?,nome=?,colore=?,descrizione=?,"
@@ -38,6 +38,7 @@ public class OggettoDaoImpl implements OggettoDao {
 		String cancellaPrenQry = "UPDATE oggetto set idprenotante=null where idoggetto=?";
 		
 		try {
+			db=DbManager.getIstance("root","root");
 			insertPs = db.getCon().prepareStatement(insertQry);
 			updatePs = db.getCon().prepareStatement(updateQry);
 			deletePs = db.getCon().prepareStatement(deleteQry);
@@ -59,16 +60,16 @@ public class OggettoDaoImpl implements OggettoDao {
 	public boolean insertOggetto(Oggetto o) {
 		boolean flag=false;
 		try {
-			insertPs.setInt(1, o.getIdOggetto());
-			insertPs.setString(2, o.getFoto());
-			insertPs.setString(3, o.getNome());
-			insertPs.setString(4, o.getColore());
-			insertPs.setString(5, o.getDescrizione());
-			insertPs.setString(6, o.getLuogoRitiro());
-			insertPs.setString(7, o.getDisponibilita());
-			insertPs.setString(8, o.getIdProprietario());
-			insertPs.setString(9, o.getIdPrenotante());
-			insertPs.setInt(10, o.getIdCategoria());
+		
+			insertPs.setString(1, o.getFoto());
+			insertPs.setString(2, o.getNome());
+			insertPs.setString(3, o.getColore());
+			insertPs.setString(4, o.getDescrizione());
+			insertPs.setString(5, o.getLuogoRitiro());
+			insertPs.setString(6, o.getDisponibilita());
+			insertPs.setString(7, o.getIdProprietario());
+			insertPs.setString(8, o.getIdPrenotante());
+			insertPs.setInt(9, o.getIdCategoria());
 			
 			int righe = insertPs.executeUpdate();
 			if(righe>0) {
@@ -86,16 +87,16 @@ public class OggettoDaoImpl implements OggettoDao {
 	public boolean updateOggetto(Oggetto o) {
 		boolean flag=false;
 		try {
-			updatePs.setInt(1, o.getIdOggetto());
-			updatePs.setString(2, o.getFoto());
-			updatePs.setString(3, o.getNome());
-			updatePs.setString(4, o.getColore());
-			updatePs.setString(5, o.getDescrizione());
-			updatePs.setString(6, o.getLuogoRitiro());
-			updatePs.setString(7, o.getDisponibilita());
-			updatePs.setString(8, o.getIdProprietario());
-			updatePs.setString(9, o.getIdPrenotante());
-			updatePs.setInt(10, o.getIdCategoria());
+			
+			updatePs.setString(1, o.getFoto());
+			updatePs.setString(2, o.getNome());
+			updatePs.setString(3, o.getColore());
+			updatePs.setString(4, o.getDescrizione());
+			updatePs.setString(5, o.getLuogoRitiro());
+			updatePs.setString(6, o.getDisponibilita());
+			updatePs.setString(7, o.getIdProprietario());
+			updatePs.setString(8, o.getIdPrenotante());
+			updatePs.setInt(9, o.getIdCategoria());
 			
 			int righe = updatePs.executeUpdate();
 			if(righe>0) {
