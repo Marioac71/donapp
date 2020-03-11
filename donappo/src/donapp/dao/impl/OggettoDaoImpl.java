@@ -141,7 +141,7 @@ public class OggettoDaoImpl implements OggettoDao {
 				o.setNome(rs.getString("nome"));
 				o.setColore(rs.getString("colore"));
 				o.setDescrizione(rs.getString("descrizione"));
-				o.setLuogoRitiro(rs.getString("luogo_ritiro"));
+				o.setLuogoRitiro(rs.getString("luogoritiro"));
 				o.setDisponibilita(rs.getString("disponibilita"));
 				o.setIdProprietario(rs.getString("idproprietario"));
 				o.setIdPrenotante(rs.getString("idprenotante"));
@@ -169,7 +169,7 @@ public class OggettoDaoImpl implements OggettoDao {
 				o.setNome(rs.getString("nome"));
 				o.setColore(rs.getString("colore"));
 				o.setDescrizione(rs.getString("descrizione"));
-				o.setLuogoRitiro(rs.getString("luogo_ritiro"));
+				o.setLuogoRitiro(rs.getString("luogoritiro"));
 				o.setDisponibilita(rs.getString("disponibilita"));
 				o.setIdProprietario(rs.getString("idproprietario"));
 				o.setIdPrenotante(rs.getString("idprenotante"));

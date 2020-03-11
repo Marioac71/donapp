@@ -10,6 +10,12 @@
     		%>
     		<jsp:forward page="profilo.jsp"/>
    		<% }
+    	else {
+    		%>
+    		<script type="text/javascript">
+alert ("Username o Password errati");
+</script>
+    	<% }
     	 %>
     		
     <% 
@@ -26,6 +32,7 @@
 		<meta charset="ISO-8859-1">
 		<title>Login</title>
 		<link rel="stylesheet" href="stile.css" type="text/css">
+		
 	</head>
 	
 	<body>
@@ -50,4 +57,6 @@
   </div>
 </div>
 	</body>
+	<footer>
+	</footer>
 </html>

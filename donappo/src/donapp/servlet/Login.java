@@ -65,12 +65,17 @@ public class Login extends HttpServlet {
 			session.setAttribute("username",username);
 			session.setAttribute("password", password);
 			session.setAttribute("utente", x);
+			session.setMaxInactiveInterval(120);
 			
 			RequestDispatcher dispatcher = request.getRequestDispatcher("profilo.jsp");
 			dispatcher.forward(request, response);
 			
 		}
 		else {
+//			 out.println("<script type=\"text/javascript\">");
+//			   out.println("alert('User or password incorrect');");
+//			   out.println("location='index.jsp';");
+//			   out.println("</script>");
 			RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
 			dispatcher.forward(request, response);
 			

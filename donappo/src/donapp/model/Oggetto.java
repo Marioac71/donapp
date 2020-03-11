@@ -10,7 +10,7 @@ public class Oggetto {
 	private String disponibilita;
 	private String idProprietario;
 	private String idPrenotante;
-	private Integer idCategoria;
+	private int idCategoria;
 	
 	
 	//TO STRINGa
@@ -29,7 +29,7 @@ public class Oggetto {
 	
 	//COSTRUTTORE CON PARAMETRI
 	public Oggetto(Integer idOggetto, String foto, String nome, String colore, String descrizione, String luogoRitiro,
-			String disponibilita, String idProprietario, String idPrenotante, Integer idCategoria) {
+			String disponibilita, String idProprietario, String idPrenotante, int idCategoria) {
 		super();
 		this.idOggetto = idOggetto;
 		this.foto = foto;
@@ -97,10 +97,10 @@ public class Oggetto {
 	public void setIdPrenotante(String idPrenotante) {
 		this.idPrenotante = idPrenotante;
 	}
-	public Integer getIdCategoria() {
+	public int getIdCategoria() {
 		return idCategoria;
 	}
-	public void setIdCategoria(Integer idCategoria) {
+	public void setIdCategoria(int idCategoria) {
 		this.idCategoria = idCategoria;
 	}
 	
