@@ -22,10 +22,17 @@
                                 <div class="col-lg-5 col-md-8">
                                     <div class="banner_text">
                                         <div class="banner_text_iner">
+<<<<<<< HEAD
                                             <h1>MARIO DINOSAURO</h1>
                                             <p>Una specie rara di dinosauri situati
                                             nella città di Casoria(NA)</p>
                                             <a href="loginT.jsp" class="btn_2">Dona Ora</a>
+=======
+                                            <h1>Accenture Tecnology</h1>
+                                            <p>Incididunt ut labore et dolore magna aliqua quis ipsum
+                                                suspendisse ultrices gravida. Risus commodo viverra</p>
+                                            <a href="#" class="btn_2">buy now</a>
+>>>>>>> branch 'master' of https://github.com/Marioac71/donapp
                                         </div>
                                     </div>
                                 </div>
