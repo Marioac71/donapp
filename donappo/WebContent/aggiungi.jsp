@@ -10,16 +10,15 @@
 <title>Inserisci oggetto</title>
 </head>
 <body>
-	<form action="" method="post">
-		<input type="text" name="foto" placeholder="url fotografia" value="">
+	<form action="InsOggetto" method="post" enctype="multipart/form-data">
+		<input type="file" name="foto" placeholder="url fotografia" value="">
 		<input type="text" name="nome" placeholder="Nome oggetto" value="">
 		<input type="text" name="colore" placeholder="Colore oggetto" value="">
 		<input type="text" name="descrizione" placeholder="Descrivi il tuo oggetto (se ne sei capace)" value="">
-		<input type="text" name="luogoRitiro" placeholder="Dove" value="">
+		<input type="text" name="luogoritiro" placeholder="Dove" value="">
 		<input type="text" name="disponibilita" placeholder="Disponibilità" value="">
-		<input type="text" name="idProprietario" placeholder="Tuo ID" value="">
-		<input type="text" name="idPrenotante" placeholder="ID prenotante" value="">
-		<input type="text" name="idCategoria" placeholder="Categoria'" value="">
+		<input type="text" name="idcategoria" placeholder="Categoria'" value="">
+		<input type="submit" value="Aggiungi">
 	</form> 
 </body>
 </html>

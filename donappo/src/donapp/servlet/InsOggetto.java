@@ -1,6 +1,6 @@
 package donapp.servlet;
 
-import java.io.IOException;
+import java.io.IOException;  
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -45,34 +45,41 @@ public class InsOggetto extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session= request.getSession();
 		doGet(request, response);
-		boolean d;
-		d=(boolean)session.getAttribute("loggato");
+//		boolean d;
+//		d=(boolean)session.getAttribute("loggato");
 		
-		if (d) {
-			
+		System.out.println("ok1");	
 		String foto= request.getParameter("foto");
 		String nome= request.getParameter("nome");
 		String colore= request.getParameter("colore");
 		String descrizione= request.getParameter("descrizione");
 		String luogoritiro= request.getParameter("luogoritiro");
-		String disponibilità= request.getParameter("disponibilità");
+		String disponibilità= request.getParameter("disponibilita");
 		String idproprietario= (String) session.getAttribute("username");
 		String idprenotante=null;
 		String idcategoria= request.getParameter("idcategoria");
 		
-		Integer u;
 		
-		u=Integer.parseInt(idcategoria);
+		int intero = Integer.parseInt(idcategoria);
 		
+		System.out.println("ok2");
 		OggettoDaoImpl a= new OggettoDaoImpl (); 
 		
-		Oggetto x = new Oggetto(null,foto, nome, colore, descrizione, luogoritiro, disponibilità, idproprietario, idprenotante, u);
+		Oggetto x = new Oggetto(null,foto, nome, colore, descrizione, luogoritiro, disponibilità, idproprietario, idprenotante, intero);
 		
-		a.insertOggetto(x);
+		boolean o= false;
 		
+		o=a.insertOggetto(x);
+		System.out.println(o);
+		if (o==true) {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("profilo.jsp");
-		
+		dispatcher.forward(request, response);
 		}
+		else {
+			RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+			dispatcher.forward(request, response);
+		}
+		
 	}
 
 }
