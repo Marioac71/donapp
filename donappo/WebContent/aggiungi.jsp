@@ -1,7 +1,6 @@
 <%@page import="donapp.dao.impl.OggettoDaoImpl"%>
 <%@page import="com.mysql.cj.x.protobuf.MysqlxCrud.InsertOrBuilder"%>
 <%@page import="donapp.model.Oggetto"%>
-<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
