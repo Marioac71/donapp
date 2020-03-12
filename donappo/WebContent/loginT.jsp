@@ -64,7 +64,7 @@
     <!--================login_part end =================-->
 
     <!--::footer_part start::-->
-
+	<%@ include file = "common/footer.jsp" %>
     <!--::footer_part end::-->
 
 	<!-- importare script -->

@@ -24,7 +24,7 @@
                                         Prodotti
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                                        <a class="dropdown-item" href="category.html"> categoria prodotti</a>
+                                        <a class="dropdown-item" href="categoryT.jsp"> categoria prodotti</a>
                                         <a class="dropdown-item" href="single-product.html">Prodotti singoli</a>
                                         
                                     </div>
@@ -42,6 +42,9 @@
                                         <a class="dropdown-item" href="elements.html">elements</a>
                                     </div>
                                 </li>
+                                   <li class="nav-item">
+                                    <a class="nav-link" href="aggiungiT.jsp">Inserisci</a>
+                                   </li>	
                        
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.html">
