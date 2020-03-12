@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-    <!-- jquery plugins here-->
+    <!-- jquery plugins here--> 
     <script src="assets/js/jquery-1.12.1.min.js"></script>
     <!-- popper js -->
     <script src="assets/js/popper.min.js"></script>
@@ -27,3 +27,6 @@
     <script src="assets/js/mail-script.js"></script>
     <!-- custom js -->
     <script src="assets/js/custom.js"></script>
+    
+    <!-- importare file icone -->
+    <script src="https://kit.fontawesome.com/7eb2e67776.js" crossorigin="anonymous"></script>

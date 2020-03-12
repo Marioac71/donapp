@@ -16,12 +16,12 @@
                         <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="indexT.jsp">Home</a>
+                                    <a class="nav-link" href="indexT.jsp"><i class="fas fa-home"></i> Home</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1"
                                         role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Prodotti
+                                        <i class="fas fa-list-ul"></i> Prodotti
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
                                         <a class="dropdown-item" href="categoryT.jsp"> categoria prodotti</a>
@@ -32,7 +32,7 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_3"
                                         role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Profilo
+                                        <i class="fas fa-user"></i> Profilo
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
                                         <a class="dropdown-item" href="loginT.jsp"> login</a>
@@ -43,19 +43,19 @@
                                     </div>
                                 </li>
                                    <li class="nav-item">
-                                    <a class="nav-link" href="aggiungiT.jsp">Inserisci</a>
+                                    <a class="nav-link" href="aggiungiT.jsp">
+                                    <i class="fas fa-plus-square"></i> Inserisci</a>
                                    </li>	
                        
                                 <li class="nav-item">
                                     <a class="nav-link" href="Logout">
-                              <i class="fas fa-sign-out-alt"></i>LogOut</a>
+                              <i class="fas fa-sign-out-alt"></i> LogOut</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="hearer_icon d-flex">
-                            <a id="search_1" href="javascript:void(0)"><i class="ti-search"></i></a>
-                            <a href=""><i class="ti-heart"></i></a>
-                            <div class="dropdown cart">
+                            <a id="search_1" href="javascript:void(0)"><i class="fas fa-search"></i></a>
+                       
                                 <a class="dropdown-toggle" href="#" id="navbarDropdown3" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <a href="carrelloT.jsp"> <i class="fas fa-cart-plus"></i> </a>
@@ -66,7 +66,7 @@
                                     </div>
                                 </div> -->
                                 
-                            </div>
+                          
                         </div>
                     </nav>
                 </div>

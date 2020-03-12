@@ -22,15 +22,15 @@
                                 <div class="col-lg-5 col-md-8">
                                     <div class="banner_text">
                                         <div class="banner_text_iner">
-                                            <h1>MARIO DINOSAURO</h1>
-                                            <p>Una specie rara di dinosauri situati
-                                            nella città di Casoria(NA)</p>
+                                            <h1>Benvenuto in DonApp</h1>
+                                            <p>La prima app di donazione all'iterno 
+                                            dell'azienda</p>
                                             <a href="loginT.jsp" class="btn_2">Dona Ora</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="banner_img d-none d-lg-block">
-                                    <img src="img/banner_img.png" alt="">
+                                    <img src="assets/img/unnamed.jpg" alt="">
                                 </div>
                             </div>
                         </div><div class="single_banner_slider">
@@ -38,15 +38,15 @@
                                 <div class="col-lg-5 col-md-8">
                                     <div class="banner_text">
                                         <div class="banner_text_iner">
-                                            <h1>ERRI POTTER</h1>
-                                            <p>L'unico mago ad aver sconfitto il signore oscuro,
-                                            anche se la credenza vuole ricordarlo come il ''pezzotto''</p>
+                                            <h1>Dona con il Cuore</h1>
+                                            <p>Quello che non usi oggi potrebbe
+                                            servire al tuo collega</p>
                                             <a href="loginT.jsp" class="btn_2">Dona Ora</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="banner_img d-none d-lg-block">
-                                    <img src="img/banner_img.png" alt="">
+                                    <img src="assets/img/cuoricini.webp" alt="">
                                 </div>
                             </div>
                         </div><!--<div class="single_banner_slider">
@@ -85,7 +85,7 @@
                             </div>
                         </div> -->
                     </div>
-                    <div class="slider-counter"></div>
+                    
                 </div>
             </div>
         </div>
