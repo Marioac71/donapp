@@ -5287,8 +5287,7 @@ ul {
 
 /* line 1871, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_product.scss */
 .radion_btn input[type="radio"]:checked ~ .check {
-  border: 1px solid #ff3368;
-  background: #ff3368;
+ 
 }
 
 /* line 1876, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_product.scss */
@@ -5405,7 +5404,7 @@ ul {
 
 /* line 1948, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_product.scss */
 .login_part .login_part_form .form-control ::placeholder {
-  color: #c3c3c3;
+  color: #00ff11;
 }
 
 /* line 1954, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_product.scss */

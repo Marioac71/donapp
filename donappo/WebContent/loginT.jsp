@@ -1,3 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+   
+    <% 
+    try{
+    	boolean x=(boolean)session.getAttribute("loggato");
+    	System.out.println("x = "+x);
+    	if(x) {
+    		System.out.println(x);
+    		%>
+    		<jsp:forward page="indexT.jsp"/>
+   		<% }
+    	else {
+    		%>
+    		<script type="text/javascript">
+alert ("Username o Password errati");
+</script>
+    	<% }
+    	 %>
+    		
+    <% 
+
+    }
+    catch(Exception e){
+    	e.printStackTrace();
+    session.setAttribute("loggato",false);
+    } 
+    %>
 <!doctype html>
 <html lang="zxx">
 
@@ -35,9 +63,9 @@
                         <div class="login_part_form_iner">
                             <h3>Bentornato<br>
                                 Accedi con i tuoi dati</h3>
-                            <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+                            <form class="row contact_form" action="Login" method="post" novalidate="novalidate">
                                 <div class="col-md-12 form-group p_star">
-                                    <input type="text" class="form-control" id="name" name="name" value=""
+                                    <input type="text" class="form-control" id="name" name="username" value=""
                                         placeholder="Username">
                                 </div>
                                 <div class="col-md-12 form-group p_star">

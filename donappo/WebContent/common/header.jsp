@@ -47,7 +47,7 @@
                                    </li>	
                        
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">
+                                    <a class="nav-link" href="Logout">
                               <i class="fas fa-sign-out-alt"></i>LogOut</a>
                                 </li>
                             </ul>

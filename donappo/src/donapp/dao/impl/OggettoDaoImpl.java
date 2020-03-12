@@ -19,7 +19,7 @@ public class OggettoDaoImpl implements OggettoDao {
 	private PreparedStatement selectPsAllOgg;
 	private PreparedStatement prenotaPsOgg;
 	private PreparedStatement cancellaPsPren;
-	
+	private PreparedStatement updatePsFoto;
 	//COSTRUTTOREaxxh
 	public OggettoDaoImpl() {
 		String insertQry = "INSERT INTO oggetto (foto,nome,colore,descrizione,luogoritiro"
@@ -30,6 +30,8 @@ public class OggettoDaoImpl implements OggettoDao {
 				+ "SET idoggetto=?,foto=?,nome=?,colore=?,descrizione=?,"
 				+ "luogo_ritiro=?,disponibilita=?,idproprietario=?,idprenotante=?,idcategoria=?";
 		
+		String updateFoto="UPDATE oggetto SET foto = ? WHERE idoggetto=?";
+		
 		String deleteQry = "DELETE FROM oggetto WHERE idoggetto=?";
 		
 		String searchAllMyOggQry = "SELECT * FROM oggetto WHERE idproprietario=?";
@@ -39,13 +41,14 @@ public class OggettoDaoImpl implements OggettoDao {
 		
 		try {
 			db=DbManager.getIstance("root","root");
-			insertPs = db.getCon().prepareStatement(insertQry);
+			insertPs = db.getCon().prepareStatement(insertQry, PreparedStatement.RETURN_GENERATED_KEYS);
 			updatePs = db.getCon().prepareStatement(updateQry);
 			deletePs = db.getCon().prepareStatement(deleteQry);
 			searchPsAllOgg = db.getCon().prepareStatement(searchAllMyOggQry);
 			selectPsAllOgg = db.getCon().prepareStatement(selectAllOggQry);
 			prenotaPsOgg = db.getCon().prepareStatement(prenotaOggQry);
 			cancellaPsPren = db.getCon().prepareStatement(cancellaPrenQry);
+			updatePsFoto= db.getCon().prepareStatement(updateFoto);
 			
 		} catch (SQLException e) {
 			System.err.println("Errore nel costruttore");
@@ -57,10 +60,11 @@ public class OggettoDaoImpl implements OggettoDao {
 	
 	//METODO CHE INSERISCE UN NUOVO OGGETTO
 	@Override
-	public boolean insertOggetto(Oggetto o) {
+	public Integer insertOggetto(Oggetto o) {
 		boolean flag=false;
+		 Integer key=null;
 		try {
-		
+
 			insertPs.setString(1, o.getFoto());
 			insertPs.setString(2, o.getNome());
 			insertPs.setString(3, o.getColore());
@@ -73,13 +77,22 @@ public class OggettoDaoImpl implements OggettoDao {
 			
 			int righe = insertPs.executeUpdate();
 			if(righe>0) {
-				flag=true;
+				flag=true; 
 			}
+			
+			ResultSet rs = insertPs.getGeneratedKeys();
+			if (rs.next()) {
+			   key = rs.getInt(1);
+			}
+			
+		
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.err.println("Errore inserimento oggetto");
 		}
-		return flag;
+		
+		return key;
 	}
 
 	//METODO CHE AGGIORNA UN PRODOTTO
@@ -213,6 +226,25 @@ public class OggettoDaoImpl implements OggettoDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		return flag;
+	}
+	
+	public boolean updateFoto(int idOggetto, String foto) {
+		boolean flag=false;
+		try {
+			updatePsFoto.setString(1, foto);
+			updatePsFoto.setInt(2, idOggetto);
+			int righe = updatePsFoto.executeUpdate();
+			if(righe>0) {
+				flag=true; 
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	
+		
 		return flag;
 	}
 

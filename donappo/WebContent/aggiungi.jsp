@@ -1,6 +1,7 @@
 <%@page import="donapp.dao.impl.OggettoDaoImpl"%>
 <%@page import="com.mysql.cj.x.protobuf.MysqlxCrud.InsertOrBuilder"%>
 <%@page import="donapp.model.Oggetto"%>
+<%@page import="donapp.servlet.Inserimento"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -10,8 +11,8 @@
 <title>Inserisci oggetto</title>
 </head>
 <body>
-	<form action="InsOggetto" method="post" enctype="multipart/form-data">
-		<input type="file" name="foto" placeholder="url fotografia" value="">
+	<form action="Inserimento" method="post" enctype="multipart/form-data">
+	<input type="file" id="img" name="img" accept="image/*" value="">
 		<input type="text" name="nome" placeholder="Nome oggetto" value="">
 		<input type="text" name="colore" placeholder="Colore oggetto" value="">
 		<input type="text" name="descrizione" placeholder="Descrivi il tuo oggetto (se ne sei capace)" value="">

@@ -14,6 +14,7 @@
 <jsp:getProperty property="username" name="utente"/>
 <form action="Logout" method="post">
 <input type="submit" value="Logout"></form>
-<a href="searchOggetti">Pagina aggiungi</a>
+
+<a href="aggiungi.jsp">Pagina aggiungi</a>
 </body>
 </html>
