@@ -47,8 +47,8 @@ public class GetAllMyOggetti extends HttpServlet {
 
 		}
 
-		request.setAttribute("listaogg", a);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("carrelloT.jsp");
+		request.setAttribute("myogg", a);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("yourOggetti.jsp");
 		dispatcher.forward(request, response);
 	}
 	

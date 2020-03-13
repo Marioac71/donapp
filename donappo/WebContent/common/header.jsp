@@ -38,9 +38,9 @@
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
                                         <a class="dropdown-item" href="loginT.jsp"> login</a>
                                         <a class="dropdown-item" href="profiloT.jsp">Il tuo profilo</a>
-                                        <a class="dropdown-item" href="cart.html">shopping cart</a>
-                                        <a class="dropdown-item" href="confirmation.html">confirmation</a>
-                                        <a class="dropdown-item" href="elements.html">elements</a>
+                                        <a class="dropdown-item" href="GetAllMyOggetti">I tuoi oggetti </a>
+                                        <a class="dropdown-item" href="confirmation.html">Le tue prenotazioni</a>
+                                       
                                     </div>
                                 </li>
                                    <li class="nav-item">

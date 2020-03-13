@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html lang="zxx">
 
@@ -22,8 +21,8 @@
         <div class="col-lg-8">
           <div class="breadcrumb_iner">
             <div class="breadcrumb_iner_item">
-              <h2>Il tuo profilo</h2>
-              <p>Home <span>-</span>Profilo</p>
+              <h2>Prodotti in prenotazione</h2>
+              <p>Home <span>-</span>Prodotti in prenotazione</p>
             </div>
           </div>
         </div>
@@ -38,57 +37,43 @@
       <div class="cart_inner">
         <div class="table-responsive">
           <table class="table">
-
             <thead>
-            <h3><b>I tuoi dati</b></h3> 
-            <jsp:useBean id="utente" scope="session" class="donapp.model.Utente"/>
-            <jsp:setProperty property="*" name="utente" />
               <tr>
-                <th scope="col"><h3><b><Center></Center></b></h3></th>
-                <th scope="col"><h3><b><Center></Center></b></h3></th>     
+                <th scope="col">Prodotti</th>
+                <th scope="col">Prenota</th>
               </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>
-                  <h4>Username:</h4> 
-                </td>
-                <td>   
-                <jsp:getProperty property="username" name="utente" />         
-                </td>
-              </tr>
+            <c:forEach items="${myogg}" var="item">
               <tr>
                 <td>
-                  <h4>Nome:</h4>
+                  <div class="media">
+                    <div class="d-flex">
+                      <img src="https://198530-593833-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2020/03/consigli-fotografia-inverno.jpg" />
+                    </div>
+                    <div class="media-body">
+                      <p>${item.nome}</p>
+                    </div>
+                  </div>
+                  
                 </td>
-                <td>   
-                <jsp:getProperty property="nome" name="utente" />          
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h4>Cognome:</h4>
-                </td>
-                <td>
-                <jsp:getProperty property="cognome" name="utente" />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h4>Email:</h4>
-                </td>
-                <td>
-                <jsp:getProperty property="email" name="utente" />
+                <td> 
+                mkkml,l             
                 </td>
               </tr>
-             
+            </c:forEach>  
             </tbody>
+            
           </table>
-          
+          <div class="checkout_btn_inner float-right">
+            <a class="btn_1" href="#">Continua Shopping</a>
+            <a class="btn_1 checkout_btn_1" href="#">Procedi al checkout</a>
+          </div>
         </div>
       </div>
+      </div>
+      
   </section>
-  
   <!--================End Cart Area =================-->
 
   <!--::footer_part start::-->
