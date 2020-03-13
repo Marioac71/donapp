@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     <!DOCTYPE html>
   <header class="main_menu home_menu">
         <div class="container">
@@ -36,7 +37,7 @@
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
                                         <a class="dropdown-item" href="loginT.jsp"> login</a>
-                                        <a class="dropdown-item" href="checkout.html">product checkout</a>
+                                        <a class="dropdown-item" href="profiloT.jsp">Il tuo profilo</a>
                                         <a class="dropdown-item" href="cart.html">shopping cart</a>
                                         <a class="dropdown-item" href="confirmation.html">confirmation</a>
                                         <a class="dropdown-item" href="elements.html">elements</a>
@@ -54,12 +55,13 @@
                             </ul>
                         </div>
                         <div class="hearer_icon d-flex">
-                            <a id="search_1" href="javascript:void(0)"><i class="fas fa-search"></i></a>
+                            <a id="search_1" href="javascript:void(0)"><i class="fas fa-search"></i> </a>
                        
-                                <a class="dropdown-toggle" href="#" id="navbarDropdown3" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <a href="carrelloT.jsp"> <i class="fas fa-cart-plus"></i> </a>
-                                </a>
+                                </div>
+                                
+                                <jsp:useBean id="utent" scope="session" class="donapp.model.Utente"/>
+            						<jsp:setProperty property="*" name="utent" />
+                               <a href="profiloT.jsp"><h6 align="right">  Ciao, <jsp:getProperty property="username" name="utent" /> </h6></a>
                                 <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <div class="single_product">
     
@@ -67,7 +69,7 @@
                                 </div> -->
                                 
                           
-                        </div>
+                        
                     </nav>
                 </div>
             </div>
