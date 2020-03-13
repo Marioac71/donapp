@@ -44,7 +44,7 @@ public class GetOgg extends HttpServlet {
 		
 		x= o.getOggetto(idogg);
 		
-		session.setAttribute("oggetto", o);
+		session.setAttribute("oggetto", x);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("single-product.jsp");
 		dispatcher.forward(request, response);

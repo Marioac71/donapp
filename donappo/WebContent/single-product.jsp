@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html lang="zxx">
 
@@ -11,20 +14,7 @@
     <!-- Header part end-->
 
   <!-- breadcrumb start-->
-  <section class="breadcrumb breadcrumb_bg">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="breadcrumb_iner">
-            <div class="breadcrumb_iner_item">
-              <h2>Shop Single</h2>
-              <p>Home <span>-</span> Shop Single</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+
   <!-- breadcrumb start-->
   <!--================End Home Banner Area =================-->
 
@@ -41,28 +31,25 @@
             </div>
           </div>
         </div>
+        <jsp:useBean id="oggetto" scope="session" class="donapp.model.Oggetto"/>
+            <jsp:setProperty property="*" name="oggetto" />
         <div class="col-lg-5 col-xl-4">
           <div class="s_product_text">
-            <h5>previous <span>|</span> next</h5>
-            <h3>Faded SkyBlu Denim Jeans</h3>
+         
+            <h3><jsp:getProperty property="nome" name="oggetto"/></h3>
             <ul class="list">
               <li>
                 <a class="active" href="#">
-                  <span>Category</span> quale categoria?</a>
+                  <span>Category</span> <jsp:getProperty property="idCategoria" name="oggetto"/></a>
               </li>
               <li>
-                <a href="#"> <span>disponibilitï¿½</span> : In Stock</a>
+                <a href="#"> <span>disponibilità</span> : In Stock</a>
               </li>
             </ul>
             <p>
-              Inserisci qui la tua descrizione articolo
+              <jsp:getProperty property="descrizione" name="oggetto"/>
             </p>
             <div class="card_area d-flex justify-content-between align-items-center">
-              <div class="product_count">
-                <span class="inumber-decrement"> <i class="ti-minus"></i></span>
-                <input class="input-number" type="text" value="1" min="0" max="10">
-                <span class="number-increment"> <i class="ti-plus"></i></span>
-              </div>
               <a href="#" class="btn_3">Prenota Ora</a>
             </div>
           </div>
