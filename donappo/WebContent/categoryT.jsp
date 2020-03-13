@@ -102,11 +102,11 @@
 								<div class="single_product_item">
 									<img src="img/product/product_1.png" alt="">
 									<div class="single_product_text">
-										<form action="GetOgg" id="invio">
+										<form action="GetOgg" id="${item.idOggetto}">
 
 
 											<input type="hidden" name="idoggetto" value="${item.idOggetto}">
-											 <button type="submit" value="submit"> ${item.nome}</button>
+											 <a onclick="document.getElementById('${item.idOggetto}').submit()"> ${item.nome}</a>
 											<h3>${item.idProprietario}</h3>
 											<a href="#" class="add_cart">+ add to cart<i
 												class="ti-heart"></i></a>

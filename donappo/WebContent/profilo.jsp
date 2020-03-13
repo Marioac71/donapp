@@ -15,7 +15,6 @@
 <form action="Logout" method="post">
 <input type="submit" value="Logout"></form>
 
-<a href="aggiungi.jsp">Pagina aggiungi</a>
-<a
+<a href="aggiungi.jsp">Pagina aggiungi</a>   kk 
 </body>
 </html>
