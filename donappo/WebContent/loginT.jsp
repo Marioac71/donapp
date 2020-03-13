@@ -12,7 +12,7 @@
    		<% }
     	else {
     		%>
-    		<script type="text/javascript">
+<script type="text/javascript">
 alert ("Username o Password errati");
 </script>
     	<% }

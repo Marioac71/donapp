@@ -24,45 +24,45 @@
             	              <div class="col-sm-6">
                 <div class="form-group">
                   <input class="form-control" name="name" id="name" type="text" onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Enter your name'" placeholder='Prodotto'>
+                    onblur="this.placeholder = 'Prodotto'" placeholder='Prodotto'>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
                   <input class="form-control" name="email" id="email" type="email" onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Enter email address'" placeholder='Colore'>
+                    onblur="this.placeholder = 'Colore'" placeholder='Colore'>
                 </div>
               </div>
               <div class="col-12">
                 <div class="form-group">
 
                   <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9"
-                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'"
+                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Descrizione Prodotto'"
                     placeholder='Descrizione Prodotto'></textarea>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
                   <input class="form-control" name="name" id="name" type="text" onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Enter your name'" placeholder='Enter your name'>
+                    onblur="this.placeholder = 'Inserisci nome'" placeholder='Inserisci nome'>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
                   <input class="form-control" name="email" id="email" type="email" onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Enter email address'" placeholder='Enter email address'>
+                    onblur="this.placeholder = 'Inserisci email'" placeholder='Inserisci email'>
                 </div>
               </div>
               <div class="col-12">
                 <div class="form-group">
                   <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Enter Subject'" placeholder='Indirizzo di ritiro'>
+                    onblur="this.placeholder = 'Indirizzo di ritiro'" placeholder='Indirizzo di ritiro'>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
                   <input class="form-control" name="subject" id="subject" type="file" onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Enter Subject'" placeholder='Aggiungi foto'>
+                    onblur="this.placeholder = 'Aggiungi foto'" placeholder='Aggiungi foto'>
                        <div class="form-group mt-3">
               					<a href="#" class="btn_3 button-contactForm" >Aggiungi foto</a>
            			 </div>

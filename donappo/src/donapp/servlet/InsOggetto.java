@@ -69,7 +69,7 @@ public class InsOggetto extends HttpServlet {
 		
 		boolean o= false;
 		
-		o=a.insertOggetto(x);
+		//o=a.insertOggetto(x);
 		System.out.println(o);
 		if (o==true) {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("profilo.jsp");
