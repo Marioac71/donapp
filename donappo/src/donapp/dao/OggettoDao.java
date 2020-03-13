@@ -17,6 +17,7 @@ public interface OggettoDao {
 	public boolean deletePrenotazione(int idOggetto);
 	public boolean updateFoto(int idoggetto, String foto);
 	public Oggetto getOggetto(int idoggetto);
+	public ArrayList<Oggetto> getAllPrenotation(String username);
 	
 
 }

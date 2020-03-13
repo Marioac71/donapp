@@ -43,14 +43,14 @@
                   <span>Category</span> <jsp:getProperty property="idCategoria" name="oggetto"/></a>
               </li>
               <li>
-                <a href="#"> <span>disponibilità</span> : In Stock</a>
+                <a href="#"> <span>disponibilitï¿½</span> : In Stock</a>
               </li>
             </ul>
             <p>
               <jsp:getProperty property="descrizione" name="oggetto"/>
             </p>
             <div class="card_area d-flex justify-content-between align-items-center">
-              <a href="#" class="btn_3">Prenota Ora</a>
+              <a href="PrenotaOggetto" class="btn_3">Prenota Ora</a>
             </div>
           </div>
         </div>

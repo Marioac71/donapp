@@ -1,6 +1,7 @@
 package donapp.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,19 +13,18 @@ import javax.servlet.http.HttpSession;
 
 import donapp.dao.impl.OggettoDaoImpl;
 import donapp.model.Oggetto;
-import donapp.model.Utente;
 
 /**
- * Servlet implementation class PrenotaOggetto
+ * Servlet implementation class GetAllPrenotation
  */
-@WebServlet("/PrenotaOggetto")
-public class PrenotaOggetto extends HttpServlet {
+@WebServlet("/GetAllPrenotation")
+public class GetAllPrenotation extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-     /**
+    /**
      * @see HttpServlet#HttpServlet()
      */
-    public PrenotaOggetto() {
+    public GetAllPrenotation() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,24 +35,20 @@ public class PrenotaOggetto extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
 		OggettoDaoImpl o= new OggettoDaoImpl();
-		HttpSession session = request.getSession();
-		String username=(String)session.getAttribute("username");
-		String idOggetto=(String)session.getAttribute("idOggetto");
-		int a = Integer.parseInt(idOggetto);
-		
-		boolean flag = o.prenotaOggetto(username, a);
-		if (flag == true)
-		{
-			RequestDispatcher dispatcher = request.getRequestDispatcher("categoryT.jsp");
-			dispatcher.forward(request, response);
+
+		HttpSession session= request.getSession();
+		String idprenotante=(String)session.getAttribute("username");
+		ArrayList<Oggetto> a= new ArrayList<Oggetto>();
+		a= o.getAllPrenotation(idprenotante);
+		for(Oggetto ob: a ) {
+			System.out.println(ob.getNome()); 
+
 		}
-		else
-		{
-			RequestDispatcher dispatcher = request.getRequestDispatcher("indexT.jsp");
-			dispatcher.forward(request, response);
-		}
+
+		request.setAttribute("mypren", a);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("PrenotazioniT.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	/**

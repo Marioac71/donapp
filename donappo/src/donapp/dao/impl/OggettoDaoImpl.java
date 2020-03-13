@@ -21,6 +21,7 @@ public class OggettoDaoImpl implements OggettoDao {
 	private PreparedStatement cancellaPsPren;
 	private PreparedStatement updatePsFoto;
 	private PreparedStatement getPsOggetto;
+	private PreparedStatement getAllPrenotation;
 	//COSTRUTTOREaxxh
 	public OggettoDaoImpl() {
 		String insertQry = "INSERT INTO oggetto (foto,nome,colore,descrizione,luogoritiro"
@@ -40,6 +41,7 @@ public class OggettoDaoImpl implements OggettoDao {
 		String prenotaOggQry = "update oggetto set idprenotante=? where idoggetto=?";
 		String cancellaPrenQry = "UPDATE oggetto set idprenotante=null where idoggetto=?";
 		String getOggettoQry="SELECT * FROM oggetto WHERE idoggetto=?";
+		String getAllPrenotationQry = "SELECT * FROM oggetto WHERE idprenotante=?";
 		
 		try {
 			db=DbManager.getIstance("root","root");
@@ -283,6 +285,34 @@ public class OggettoDaoImpl implements OggettoDao {
 		}
 		
 		return o;
+	}
+	
+	//METODO CHE RESTITUISCE TUTTI I MIEI OGGETTI PRENOTATI
+	@Override
+	public ArrayList<Oggetto> getAllPrenotation(String idprenotante) {
+		ArrayList<Oggetto> arrO = new ArrayList<Oggetto>();
+		try {
+			getAllPrenotation.setString(1, idprenotante);
+			ResultSet rs = getAllPrenotation.executeQuery();
+			while(rs.next()) {
+				Oggetto o = new Oggetto();
+				o.setIdOggetto(rs.getInt("idoggetto"));
+				o.setFoto(rs.getString("foto"));
+				o.setNome(rs.getString("nome"));
+				o.setColore(rs.getString("colore"));
+				o.setDescrizione(rs.getString("descrizione"));
+				o.setLuogoRitiro(rs.getString("luogoritiro"));
+				o.setDisponibilita(rs.getString("disponibilita"));
+				o.setIdProprietario(rs.getString("idproprietario"));
+				o.setIdPrenotante(rs.getString("idprenotante"));
+				o.setIdCategoria(rs.getInt("idcategoria"));
+				arrO.add(o);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return arrO;
 	}
 
 }
