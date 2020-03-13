@@ -102,10 +102,15 @@
 								<div class="single_product_item">
 									<img src="img/product/product_1.png" alt="">
 									<div class="single_product_text">
-										<h4>${item.nome}</h4>
-										<h3>${item.idProprietario}</h3>
-										<a href="#" class="add_cart">+ add to cart<i
-											class="ti-heart"></i></a>
+										<form action="GetOgg" id="invio">
+
+
+											<input type="hidden" name="idoggetto" value="${item.idOggetto}">
+											 <button type="submit" value="submit"> ${item.nome}</button>
+											<h3>${item.idProprietario}</h3>
+											<a href="#" class="add_cart">+ add to cart<i
+												class="ti-heart"></i></a>
+									</form>
 									</div>
 								</div>
 							</div>

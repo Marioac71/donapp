@@ -12,7 +12,7 @@ import donapp.model.Oggetto;
 public class OggettoDaoImpl implements OggettoDao {
 	
 	DbManager db;
-	public PreparedStatement insertPs;
+	private PreparedStatement insertPs;
 	private PreparedStatement updatePs;
 	private PreparedStatement deletePs;
 	private PreparedStatement searchPsAllOgg;
@@ -20,6 +20,7 @@ public class OggettoDaoImpl implements OggettoDao {
 	private PreparedStatement prenotaPsOgg;
 	private PreparedStatement cancellaPsPren;
 	private PreparedStatement updatePsFoto;
+	private PreparedStatement getPsOggetto;
 	//COSTRUTTOREaxxh
 	public OggettoDaoImpl() {
 		String insertQry = "INSERT INTO oggetto (foto,nome,colore,descrizione,luogoritiro"
@@ -38,6 +39,7 @@ public class OggettoDaoImpl implements OggettoDao {
 		String selectAllOggQry = "SELECT * FROM oggetto WHERE idproprietario!=?";
 		String prenotaOggQry = "update oggetto set idprenotante=? where idoggetto=?";
 		String cancellaPrenQry = "UPDATE oggetto set idprenotante=null where idoggetto=?";
+		String getOggettoQry="SELECT * FROM oggetto WHERE idoggetto=?";
 		
 		try {
 			db=DbManager.getIstance("root","root");
@@ -49,6 +51,7 @@ public class OggettoDaoImpl implements OggettoDao {
 			prenotaPsOgg = db.getCon().prepareStatement(prenotaOggQry);
 			cancellaPsPren = db.getCon().prepareStatement(cancellaPrenQry);
 			updatePsFoto= db.getCon().prepareStatement(updateFoto);
+			getPsOggetto=db.getCon().prepareStatement(getOggettoQry);
 			
 		} catch (SQLException e) {
 			System.err.println("Errore nel costruttore");
@@ -246,6 +249,40 @@ public class OggettoDaoImpl implements OggettoDao {
 	
 		
 		return flag;
+	}
+	
+	public Oggetto getOggetto(int idOggetto) {
+		
+		Oggetto o= new Oggetto();
+		
+		try {
+			
+			getPsOggetto.setInt(1, idOggetto);
+			ResultSet rs=getPsOggetto.executeQuery();
+			
+			
+			
+			while(rs.next()) {
+				
+				o.setIdOggetto(rs.getInt("idoggetto"));
+				o.setFoto(rs.getString("foto"));
+				o.setNome(rs.getString("nome"));
+				o.setColore(rs.getString("colore"));
+				o.setDescrizione(rs.getString("descrizione"));
+				o.setLuogoRitiro(rs.getString("luogoritiro"));
+				o.setDisponibilita(rs.getString("disponibilita"));
+				o.setIdProprietario(rs.getString("idproprietario"));
+				o.setIdPrenotante(rs.getString("idprenotante"));
+				o.setIdCategoria(rs.getInt("idcategoria"));
+				
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return o;
 	}
 
 }

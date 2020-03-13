@@ -1,7 +1,6 @@
 package donapp.servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,51 +14,52 @@ import donapp.dao.impl.OggettoDaoImpl;
 import donapp.model.Oggetto;
 
 /**
- * Servlet implementation class searchOggetti
+ * Servlet implementation class Oggetto
  */
-@WebServlet("/searchOggetti")
-public class searchOggetti extends HttpServlet {
+@WebServlet("/GetOgg")
+public class GetOgg extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public searchOggetti() {
+    public GetOgg() {
         super();
-        // TODO Auto-generated constructor stubisaassaasasas
+        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
 	
-OggettoDaoImpl o= new OggettoDaoImpl();
-		
 		HttpSession session= request.getSession();
-		String username=(String)session.getAttribute("username");
-		ArrayList<Oggetto> a= new ArrayList<Oggetto>();
-		a= o.searchOggetti(username);
+
+		String idoggetto= request.getParameter("idoggetto");
+		int idogg= Integer.parseInt(idoggetto);
 		
-		for(Oggetto ob: a ) {
-			System.out.println(ob.getNome()); 
-			
-		}
+		OggettoDaoImpl o= new OggettoDaoImpl(); 
 		
-		request.setAttribute("listaogg", a);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("categoryT.jsp");
+		Oggetto x= new Oggetto();
+		
+		x= o.getOggetto(idogg);
+		
+		session.setAttribute("oggetto", o);
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("single-product.jsp");
 		dispatcher.forward(request, response);
+		
+		
+		
+		
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)aa
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-		
 		
 		
 		

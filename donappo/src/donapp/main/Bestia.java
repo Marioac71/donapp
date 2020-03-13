@@ -9,8 +9,7 @@ public class Bestia {
 		
 		OggettoDaoImpl a= new OggettoDaoImpl();
 		
-		Oggetto x = new Oggetto(null,"","saassas","sddsadsds","eeqqee","jjnjn","2020-11-11","Marioac71",null,1);
-		a.insertOggetto(x);
+		System.out.println(a.getOggetto(2));
 //A
 	}
 
