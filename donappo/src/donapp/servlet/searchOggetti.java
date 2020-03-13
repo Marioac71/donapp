@@ -48,7 +48,7 @@ OggettoDaoImpl o= new OggettoDaoImpl();
 		}
 		
 		request.setAttribute("listaogg", a);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("oggetti.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("categoryT.jsp");
 		dispatcher.forward(request, response);
 	}
 

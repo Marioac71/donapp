@@ -16,5 +16,6 @@
 <input type="submit" value="Logout"></form>
 
 <a href="aggiungi.jsp">Pagina aggiungi</a>
+<a
 </body>
 </html>

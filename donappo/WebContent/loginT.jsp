@@ -36,14 +36,10 @@ alert ("Username o Password errati");
 
 <body>
     <!--::header part start::-->
-    <%@ include file = "common/header.jsp" %> 
+    
     <!-- Header part end-->
-
-
     <!-- breadcrumb start-->
-
     <!-- breadcrumb start-->
-
     <!--================login_part Area =================-->
     <section class="login_part padding_top">
         <div class="container">
@@ -59,10 +55,13 @@ alert ("Username o Password errati");
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
+                 
                     <div class="login_part_form">
+                    
                         <div class="login_part_form_iner">
-                            <h3>Bentornato<br>
-                                Accedi con i tuoi dati</h3>
+                        <Center><img src="assets/img/LogoDonApp.png" alt="logo" height="84px" width="244px"></Center>
+                            <Center><h3>Bentornato<br>
+                                Accedi con i tuoi dati</h3></Center>
                             <form class="row contact_form" action="Login" method="post" novalidate="novalidate">
                                 <div class="col-md-12 form-group p_star">
                                     <input type="text" class="form-control" id="name" name="username" value=""

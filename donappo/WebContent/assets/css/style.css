@@ -3,7 +3,8 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap");
 /* line 2, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_extends.scss */
 .btn_2, .form-contact .form-group .btn_1 i {
-  background-image: linear-gradient(16deg, #ff005a 0%, #ff5d2d 64%, #ffba00 100%);
+  background-image: linear-gradient(16deg, #15d128 0%, #15d128 64%, #15d128 100%);
+ 
 }
 
 /* line 10, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_extends.scss */
@@ -510,7 +511,7 @@ ul {
   display: inline-block;
   padding: 9px 42px;
   border-radius: 50px;
-  background-color: #008800;
+  background-color: #15d128;
   border: 1px solid #ecfdff;
   font-size: 15px;
   font-weight: 700;
@@ -2283,7 +2284,7 @@ ul {
   transform: scale(1, 0);
   display: block;
   border: 0px solid transparent;
-  background-color: #008800;
+  background-color: #15d128;
 }
 
 /* line 174, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_menu.scss */
@@ -2291,7 +2292,7 @@ ul {
   font-size: 14px;
   padding: 8px 20px !important;
   color: #fff !important;
-  background-color: #008800;
+  background-color: #15d128;
   text-transform: capitalize;
 }
 
@@ -2423,7 +2424,7 @@ ul {
 /* line 2, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_banner.scss */
 .banner_part {
   position: relative;
-  background-color: #ecfdff;
+  background-color: white;
   overflow: hidden;
 }
 
@@ -5331,9 +5332,9 @@ ul {
 
 /* line 1901, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_product.scss */
 .login_part .login_part_text {
-  background-image: -moz-linear-gradient(16deg, #ff005a 0%, #ff5d2d 64%, #ffba00 100%);
-  background-image: -webkit-linear-gradient(16deg, #ff005a 0%, #ff5d2d 64%, #ffba00 100%);
-  background-image: -ms-linear-gradient(16deg, #ff005a 0%, #ff5d2d 64%, #ffba00 100%);
+  background-image: -moz-linear-gradient(16deg, #16e02b 0%, #16e02b, #ffba00 100%);
+  background-image: -webkit-linear-gradient(16deg, #16e02b 0%, #16e02b, #ffba00 100%);
+  background-image: -ms-linear-gradient(16deg, #16e02b 0%, #16e02b, #ffba00 100%);
   background-size: 200% auto;
 }
 

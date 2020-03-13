@@ -24,7 +24,7 @@
                                         <i class="fas fa-list-ul"></i> Prodotti
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                                        <a class="dropdown-item" href="categoryT.jsp"> categoria prodotti</a>
+                                        <a class="dropdown-item" href="searchOggetti"> categoria prodotti</a>
                                         <a class="dropdown-item" href="single-product.html">Prodotti singoli</a>
                                         
                                     </div>
