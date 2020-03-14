@@ -39,7 +39,7 @@
                                         <a class="dropdown-item" href="loginT.jsp"> login</a>
                                         <a class="dropdown-item" href="profiloT.jsp">Il tuo profilo</a>
                                         <a class="dropdown-item" href="GetAllMyOggetti">I tuoi oggetti </a>
-                                        <a class="dropdown-item" href="confirmation.html">Le tue prenotazioni</a>
+                                        <a class="dropdown-item" href="GetAllPrenotation">Le tue prenotazioni</a>
                                        
                                     </div>
                                 </li>

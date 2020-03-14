@@ -32,47 +32,42 @@
   <!-- breadcrumb start-->
 
   <!--================Cart Area =================-->
+ 
   <section class="cart_area padding_top">
     <div class="container">
       <div class="cart_inner">
         <div class="table-responsive">
-          <table class="table">
-            <thead>
+          <table class="table" >
+          <tbody>
               <tr>
-                <th scope="col">Prodotti</th>
-                <th scope="col">Prenota</th>
+               <th>Foto</th>
+               <th>Id Oggetto</th>
+               <th>Disponibilità</th>
+               <th>Luogo ritiro</th>
+               <th>Id Prenotante</th>
               </tr>
-            </thead>
-            <tbody>
-            <c:forEach items="${myogg}" var="item">
+              <c:forEach items="${myogg}" var="item">
               <tr>
                 <td>
                   <div class="media">
                     <div class="d-flex">
-                      <img src="https://198530-593833-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2020/03/consigli-fotografia-inverno.jpg" />
+                      <img height="100" width="120" src="${item.foto}" alt="" />
                     </div>
                     <div class="media-body">
-                      <p>${item.nome}</p>
                     </div>
                   </div>
-                  
                 </td>
-                <td> 
-                mkkml,l             
-                </td>
+                <td> <p>${item.idOggetto}</p></td>
+                <td> <p>${item.disponibilita}</p></td>
+                <td> <p>${item.luogoRitiro}</p></td>
+                <td> <p>${item.idPrenotante}</p></td>
               </tr>
-            </c:forEach>  
+              </c:forEach> 
             </tbody>
-            
           </table>
-          <div class="checkout_btn_inner float-right">
-            <a class="btn_1" href="#">Continua Shopping</a>
-            <a class="btn_1 checkout_btn_1" href="#">Procedi al checkout</a>
-          </div>
         </div>
       </div>
       </div>
-      
   </section>
   <!--================End Cart Area =================-->
 

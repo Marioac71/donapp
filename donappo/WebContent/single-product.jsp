@@ -43,14 +43,18 @@
                   <span>Category</span> <jsp:getProperty property="idCategoria" name="oggetto"/></a>
               </li>
               <li>
-                <a href="#"> <span>disponibilit�</span> : In Stock</a>
+                <a href="#"> <span></span> : In Stock</a>
               </li>
             </ul>
             <p>
               <jsp:getProperty property="descrizione" name="oggetto"/>
             </p>
             <div class="card_area d-flex justify-content-between align-items-center">
-              <a href="PrenotaOggetto" class="btn_3">Prenota Ora</a>
+              <form action="PrenotaOggetto" method="get">
+             <input type="hidden" name="idogge" value="<jsp:getProperty property="idOggetto" name="oggetto"/>">
+              <input type="submit" value="Prenota" >
+              
+              </form>
             </div>
           </div>
         </div>

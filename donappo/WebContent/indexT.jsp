@@ -1,12 +1,19 @@
+
 <!doctype html>
+
 <html lang="zxx">
 
+
+
 <head>
+
     <!-- Required meta tags -->
 	<%@ include file = "common/head.jsp" %> 
+	
 </head>
 
 <body>
+
     <!--::header part start::-->
    <%@ include file = "common/header.jsp" %> 
     <!-- Header part end-->

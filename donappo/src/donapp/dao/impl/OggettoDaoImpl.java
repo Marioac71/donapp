@@ -37,7 +37,7 @@ public class OggettoDaoImpl implements OggettoDao {
 		String deleteQry = "DELETE FROM oggetto WHERE idoggetto=?";
 		
 		String searchAllMyOggQry = "SELECT * FROM oggetto WHERE idproprietario=?";
-		String selectAllOggQry = "SELECT * FROM oggetto WHERE idproprietario!=?";
+		String selectAllOggQry = "Select * from new_view where (idproprietario!=?)"; 
 		String prenotaOggQry = "update oggetto set idprenotante=? where idoggetto=?";
 		String cancellaPrenQry = "UPDATE oggetto set idprenotante=null where idoggetto=?";
 		String getOggettoQry="SELECT * FROM oggetto WHERE idoggetto=?";
@@ -54,6 +54,7 @@ public class OggettoDaoImpl implements OggettoDao {
 			cancellaPsPren = db.getCon().prepareStatement(cancellaPrenQry);
 			updatePsFoto= db.getCon().prepareStatement(updateFoto);
 			getPsOggetto=db.getCon().prepareStatement(getOggettoQry);
+			getAllPrenotation=db.getCon().prepareStatement(getAllPrenotationQry);
 			
 		} catch (SQLException e) {
 			System.err.println("Errore nel costruttore");
@@ -292,7 +293,7 @@ public class OggettoDaoImpl implements OggettoDao {
 	public ArrayList<Oggetto> getAllPrenotation(String idprenotante) {
 		ArrayList<Oggetto> arrO = new ArrayList<Oggetto>();
 		try {
-			getAllPrenotation.setString(1, idprenotante);
+			getAllPrenotation.setString(1,idprenotante);
 			ResultSet rs = getAllPrenotation.executeQuery();
 			while(rs.next()) {
 				Oggetto o = new Oggetto();

@@ -39,10 +39,14 @@ public class PrenotaOggetto extends HttpServlet {
 		OggettoDaoImpl o= new OggettoDaoImpl();
 		HttpSession session = request.getSession();
 		String username=(String)session.getAttribute("username");
-		String idOggetto=(String)session.getAttribute("idOggetto");
-		int a = Integer.parseInt(idOggetto);
+		System.out.println(username);
+		String idoggetto= request.getParameter("idogge");
+		System.out.println(idoggetto);
+		int idogg= Integer.parseInt(idoggetto);
+		System.out.println(idogg);
 		
-		boolean flag = o.prenotaOggetto(username, a);
+		boolean flag = o.prenotaOggetto(username, idogg);
+		System.out.println(flag);
 		if (flag == true)
 		{
 			RequestDispatcher dispatcher = request.getRequestDispatcher("categoryT.jsp");

@@ -43,7 +43,7 @@
                     </div>
                   </div>
                 </td>
-                <td> <p>${item.idoggetto}</p></td>
+                <td> <p>${item.idOggetto}</p></td>
                 <td> <p>${item.nome}</p></td>
                 <td> <p>${item.idProprietario}</p></td>
                 <td> <p>${item.idPrenotante}</p></td>
@@ -52,6 +52,7 @@
             </tbody>
           </table>
         </div>
+      </div>
       </div>
   </section>
   <!--================End Cart Area =================-->

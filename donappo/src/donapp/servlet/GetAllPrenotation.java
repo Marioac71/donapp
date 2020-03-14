@@ -34,11 +34,13 @@ public class GetAllPrenotation extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		OggettoDaoImpl o= new OggettoDaoImpl();
+		
+		
 
 		HttpSession session= request.getSession();
 		String idprenotante=(String)session.getAttribute("username");
+		System.out.println(idprenotante);
+		OggettoDaoImpl o= new OggettoDaoImpl();
 		ArrayList<Oggetto> a= new ArrayList<Oggetto>();
 		a= o.getAllPrenotation(idprenotante);
 		for(Oggetto ob: a ) {
