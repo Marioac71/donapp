@@ -24,15 +24,17 @@
       <div class="row s_product_inner justify-content-between">
         <div class="col-lg-7 col-xl-7">
           <div class="product_slider_img">
+          <jsp:useBean id="oggetto" scope="session" class="donapp.model.Oggetto"/>
+          <jsp:setProperty property="*" name="oggetto" />
             <div id="vertical">
-             <div data-thumb="img/product/single-product/product_1.png" class="lslide active" style="height: 450px; margin-bottom: 0px;">
-                <img src="https://wallpaperplay.com/walls/full/4/9/e/48868.jpg">
+             <div data-thumb="C:/Users/mario/Desktop/unnamed.jpg" class="lslide active" style="height: 450px; margin-bottom: 0px;">
+                <img src="C:/Users/mario/Desktop/unnamed.jpg">
                 </div>
             </div>
           </div>
         </div>
-        <jsp:useBean id="oggetto" scope="session" class="donapp.model.Oggetto"/>
-            <jsp:setProperty property="*" name="oggetto" />
+        
+           
         <div class="col-lg-5 col-xl-4">
           <div class="s_product_text">
          

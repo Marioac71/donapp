@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
+import java.sql.Timestamp;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,21 +25,21 @@ import donapp.model.Oggetto;
 /**
  * Servlet implementation class UploadServlet
  */
-@WebServlet("/Inserimento")
-public class Inserimento extends HttpServlet {
+@WebServlet("/Inserimento2")
+public class Inserimento2 extends HttpServlet {
 
-//	private String filePath = "C://images/";
-
+	private String filePath="";
 	private int maxFileSize = 200 * 1024;
 	private int maxMemSize = 4 * 1024;
 	private File file ;
+	 
 
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public Inserimento() {
+	public Inserimento2() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -56,7 +58,7 @@ public class Inserimento extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		// Check that we have a file upload request
-		HttpSession session= request.getSession();
+	HttpSession session= request.getSession();
 		
 		String foto=null;
 		String nome=null;
@@ -68,8 +70,9 @@ public class Inserimento extends HttpServlet {
 		String idprenotante=null;
 		String estensione=null;
 		String idcategoria=null;
+		String fileName=null;
+		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 		
-		InputStream input=null;
 		
 		response.setContentType("text/html");
 		java.io.PrintWriter out = response.getWriter( );
@@ -81,7 +84,7 @@ public class Inserimento extends HttpServlet {
 		factory.setSizeThreshold(maxMemSize);
 
 		// Location to save data that is larger than maxMemSize.
-		factory.setRepository(new File("./temp"));
+		factory.setRepository(new File("c:\\temp"));
 
 		// Create a new file upload handler
 		ServletFileUpload upload = new ServletFileUpload(factory);
@@ -100,17 +103,22 @@ public class Inserimento extends HttpServlet {
 				if ( !fi.isFormField () ) {
 					// Get the uploaded file parameters
 					String fieldName = fi.getFieldName();
-					String fileName = fi.getName();
+					fileName = fi.getName();
+					estensione= fileName.substring( fileName.lastIndexOf(".")) ;
+					fileName=String.valueOf(timestamp.getTime());
+					
 					String contentType = fi.getContentType();
 
 					// Write the file
-					 estensione= fileName.substring( fileName.lastIndexOf(".")) ;
-					
-					
-					input = fi.openStream(); 
-						
-					
-					
+					if( fileName.lastIndexOf("\\") >= 0 ) {
+						file = new File( filePath + fileName.substring( fileName.lastIndexOf("\\"))) ;
+					} else {
+						file = new File( filePath + fileName.substring(fileName.lastIndexOf("\\")+1)) ;
+					}
+					try (InputStream input = fi.openStream()) {
+						Files.copy(input, file.toPath());
+					}
+					out.println("Uploaded Filename: " + fileName + "<br>");
 
 				}
 				else {
@@ -119,7 +127,7 @@ public class Inserimento extends HttpServlet {
 					String value = Streams.asString(fi.openStream()); // valore associato al nome
 					out.println(value + "<br>");
 					switch (name) {
-					
+
 					case "nome":
 						nome=value;
 						break;
@@ -138,37 +146,24 @@ public class Inserimento extends HttpServlet {
 					case "idcategoria":
 						idcategoria=value;
 					}
+
 				}
-
 			}
-			
-			int intero = Integer.parseInt(idcategoria);
-			
-			OggettoDaoImpl a= new OggettoDaoImpl (); 
-			
-			Oggetto x = new Oggetto(null,foto, nome, colore, descrizione, luogoritiro, disponibilita, idproprietario, idprenotante, intero);
-			
-			
-			Integer chiave;
-			chiave= a.insertOggetto(x);
-			
+				int intero = Integer.parseInt(idcategoria);
+				
+				foto="assets/img/"+fileName+estensione;
+				OggettoDaoImpl a= new OggettoDaoImpl (); 
+				
+				Oggetto x = new Oggetto(null,foto, nome, colore, descrizione, luogoritiro, disponibilita, idproprietario, idprenotante, intero);
+				
+				
+				Integer chiave;
+				chiave= a.insertOggetto(x);
 
-			foto= "assets/img/"+chiave+estensione;
-
-
-			System.out.println(a.updateFoto(chiave, foto));
-
-
-			file = new File(foto) ;
-
-	
-			Files.copy(input, file.toPath());
-
-			
 		} catch(Exception ex) {
-			System.out.println(ex);
+			ex.printStackTrace();
+		
 		}
 	}
 
-} 
-	
+}

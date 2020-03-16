@@ -100,7 +100,7 @@
 
 							<div class="col-lg-4 col-sm-6">
 								<div class="single_product_item">
-									<img src="img/product/product_1.png" alt="">
+									<img src="${item.foto}" alt="">
 									<div class="single_product_text">
 										<form action="GetOgg" id="${item.idOggetto}">
 

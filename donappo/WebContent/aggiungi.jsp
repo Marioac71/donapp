@@ -11,7 +11,7 @@
 <title>Inserisci oggetto</title>
 </head>
 <body>
-	<form action="Inserimento" method="post" enctype="multipart/form-data">
+	<form action="Inserimento2" method="post" enctype="multipart/form-data">
 	<input type="file" id="img" name="img" accept="image/*" value="">
 		<input type="text" name="nome" placeholder="Nome oggetto" value="">
 		<input type="text" name="colore" placeholder="Colore oggetto" value="">

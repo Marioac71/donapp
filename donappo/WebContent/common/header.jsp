@@ -44,7 +44,7 @@
                                     </div>
                                 </li>
                                    <li class="nav-item">
-                                    <a class="nav-link" href="aggiungiT.jsp">
+                                    <a class="nav-link" href="aggiungi.jsp">
                                     <i class="fas fa-plus-square"></i> Inserisci</a>
                                    </li>	
                        

@@ -19,7 +19,7 @@
         </div>
         <div class="col-lg-8">
           <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm"
-            novalidate="novalidate">
+            novalidate="novalidate"> 
             <div class="row">
             	              <div class="col-sm-6">
                 <div class="form-group">
