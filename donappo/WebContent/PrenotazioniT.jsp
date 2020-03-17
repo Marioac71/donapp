@@ -36,7 +36,7 @@
     <div class="container">
       <div class="cart_inner">
         <div class="table-responsive">
-         <form action="servletEliminaOgg" method="get" >
+         <form action="EliminaPrenotazione" method="get" >
           <table class="table" >
           <tbody>
               <tr>
