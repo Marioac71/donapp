@@ -25,8 +25,8 @@
                 <div class="col-lg-8">
                     <div class="breadcrumb_iner">
                         <div class="breadcrumb_iner_item">
-                            <h2>Shop Category</h2>
-                            <p>Home <span>-</span> Shop Category</p>
+                            <h2>Categoria</h2>
+                            <p>Home <span>-</span>Categoria</p>
                         </div>
                     </div>
                 </div>
@@ -60,11 +60,8 @@
                                  
                                     </li>
                                     <li>
-                                        <a href="#">Auto e Moto</a>
-                              
-                                    </li>
-                                    <li>
                                         <a href="#">Articoli Sportivi</a>
+                                     </li>  
                                     
                                     <!--  </li>
                                     <li>
@@ -144,7 +141,6 @@
                     </div>
                 </div>
             </div>
-        </div>
     </section>
     <!--================End Category Product Area =================-->
 

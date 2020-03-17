@@ -30,15 +30,18 @@
                                     <div class="banner_text">
                                         <div class="banner_text_iner">
                                             <h2>Benvenuto in DonApp</h2>
-                                            <p><b>DONAPP</b> la prima app di donazione all'interno dell'azienda, un'idea semplice con un obiettivo molto ambizioso: promuovere e sostenere un'Economia Circolare.
-Un progetto partecipativo dove ridare vita agli oggetti che non usiamo più, diminuire i consumi di risorse e il nostro 
-impatto sull'ambiente oltre che risparmiare anche a livello economico!</p>
+                                            <p>Nasce la prima app di donazione all'interno dell'azienda, 
+                                            un'idea semplice con un obiettivo molto ambizioso: 
+                                            promuovere e sostenere un'Economia Circolare.
+                                            Un progetto partecipativo dove ridare vita agli oggetti che non usiamo più, 
+                                            diminuire i consumi di risorse e il nostro impatto sull'ambiente 
+                                            oltre che risparmiare anche a livello economico!</p>
                                             <a href="loginT.jsp" class="btn_2">Dona Ora</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="banner_img d-none d-lg-block">
-                                   
+                                    <img src="assets/img/manigiu.jpeg" height="300px" width="300px" style="margin-right: 100px">
                                 </div>
                             </div>
                         </div><div class="single_banner_slider">
@@ -47,14 +50,18 @@ impatto sull'ambiente oltre che risparmiare anche a livello economico!</p>
                                     <div class="banner_text">
                                         <div class="banner_text_iner">
                                             <h2>Come funziona?</h2>
-                                            <p>Ridiamo valore a ciò che non utilizziamo più!Inserisci elementi d'arredo, capi d'abbigliamento, oggetti di elettronica e tutto quello che non usi più, per acquisti sbagliati 
-o semplicemente perchè ti hanno annoiato, ma che potrebbero invece essere utili o graditi ad altre persone.Prenota e ritira gli oggetti che desideri.</p>
+                                            <p>Ridiamo valore a ciò che non utilizziamo più!
+                                            <b>Inserisci</b> elementi d'arredo, capi d'abbigliamento, 
+                                            oggetti di elettronica e tutto quello che non usi più, 
+                                            per acquisti sbagliati o semplicemente perchè ti hanno annoiato, 
+                                            ma che potrebbero invece essere utili o graditi ad altre persone.<br>
+                                            <b>Prenota</b> e <b>Ritira</b> gli oggetti che desideri.</p>
                                             <a href="loginT.jsp" class="btn_2">Dona Ora</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="banner_img d-none d-lg-block">
-                                    <img src="assets/img/cuoricini.webp" alt="">
+                                    <img src="assets/img/rius.jpeg" height="350px" width="550px" style="margin-right: 100px" >
                                 </div>
                             </div>
                         </div><!--<div class="single_banner_slider">
