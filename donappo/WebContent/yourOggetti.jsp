@@ -16,13 +16,13 @@
   <!--================Home Banner Area =================-->
   <!-- breadcrumb start-->
   <section class="breadcrumb breadcrumb_bg">
-    <div class="container">
+    <div class="container" >
       <div class="row justify-content-center">
         <div class="col-lg-8">
           <div class="breadcrumb_iner">
             <div class="breadcrumb_iner_item">
-              <h2>Prodotti in prenotazione</h2>
-              <p>Home <span>-</span>Prodotti in prenotazione</p>
+              <h2>I tuoi oggetti</h2>
+              <p>Home <span>-</span>I tuoi Oggetti</p>
             </div>
           </div>
         </div>

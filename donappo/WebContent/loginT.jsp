@@ -76,6 +76,7 @@ alert ("Username o Password errati");
                                         <input type="checkbox" id="f-option" name="selector">
                                         <label for="f-option">Ricordami</label>
                                     </div>
+                                    
                                     <button type="submit" value="submit" class="btn_3">
                                         login
                                     </button>

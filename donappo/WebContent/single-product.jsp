@@ -27,8 +27,8 @@
           <jsp:useBean id="oggetto" scope="session" class="donapp.model.Oggetto"/>
           <jsp:setProperty property="*" name="oggetto" />
             <div id="vertical">
-             <div data-thumb="C:/Users/mario/Desktop/unnamed.jpg" class="lslide active" style="height: 450px; margin-bottom: 0px;">
-                <img src="C:/Users/mario/Desktop/unnamed.jpg">
+             <div data-thumb="<jsp:getProperty property="foto" name="oggetto"/>" class="lslide active" style="height: 450px; margin-bottom: 0px;">
+                <img src="<jsp:getProperty property="foto" name="oggetto"/>">
                 </div>
             </div>
           </div>
@@ -39,14 +39,18 @@
           <div class="s_product_text">
          
             <h3><jsp:getProperty property="nome" name="oggetto"/></h3>
+          
             <ul class="list">
               <li>
-                <a class="active" href="#">
-                  <span>Category</span> <jsp:getProperty property="idCategoria" name="oggetto"/></a>
+                <a class="active" >
+                  <span>Categoria:</span><jsp:getProperty property="idCategoria" name="oggetto"/></a>
               </li>
               <li>
-                <a href="#"> <span></span> : In Stock</a>
+              
+                Disponibile dal:  <a class="active"><jsp:getProperty property="disponibilita" name="oggetto"/></a>
               </li>
+              
+
             </ul>
             <p>
               <jsp:getProperty property="descrizione" name="oggetto"/>
@@ -54,7 +58,7 @@
             <div class="card_area d-flex justify-content-between align-items-center">
               <form action="PrenotaOggetto" method="get">
              <input type="hidden" name="idogge" value="<jsp:getProperty property="idOggetto" name="oggetto"/>">
-              <input type="submit" value="Prenota" >
+              <input class="btn_3 button-contactForm" type="submit" value="Prenota">
               
               </form>
             </div>

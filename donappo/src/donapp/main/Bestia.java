@@ -9,8 +9,12 @@ public class Bestia {
 		
 		OggettoDaoImpl a= new OggettoDaoImpl();
 		
-		System.out.println(a.getOggetto(2));
+
 //A
+
+		
+		System.out.println(a.ricercaOgg("a"));
+		
 	}
 
 }

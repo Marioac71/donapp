@@ -29,15 +29,16 @@
                                 <div class="col-lg-5 col-md-8">
                                     <div class="banner_text">
                                         <div class="banner_text_iner">
-                                            <h1>Benvenuto in DonApp</h1>
-                                            <p>La prima app di donazione all'iterno 
-                                            dell'azienda</p>
+                                            <h2>Benvenuto in DonApp</h2>
+                                            <p><b>DONAPP</b> la prima app di donazione all'interno dell'azienda, un'idea semplice con un obiettivo molto ambizioso: promuovere e sostenere un'Economia Circolare.
+Un progetto partecipativo dove ridare vita agli oggetti che non usiamo più, diminuire i consumi di risorse e il nostro 
+impatto sull'ambiente oltre che risparmiare anche a livello economico!</p>
                                             <a href="loginT.jsp" class="btn_2">Dona Ora</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="banner_img d-none d-lg-block">
-                                    <img src="assets/img/unnamed.jpg" alt="">
+                                   
                                 </div>
                             </div>
                         </div><div class="single_banner_slider">
@@ -45,9 +46,9 @@
                                 <div class="col-lg-5 col-md-8">
                                     <div class="banner_text">
                                         <div class="banner_text_iner">
-                                            <h1>Dona con il Cuore</h1>
-                                            <p>Quello che non usi oggi potrebbe
-                                            servire al tuo collega</p>
+                                            <h2>Come funziona?</h2>
+                                            <p>Ridiamo valore a ciò che non utilizziamo più!Inserisci elementi d'arredo, capi d'abbigliamento, oggetti di elettronica e tutto quello che non usi più, per acquisti sbagliati 
+o semplicemente perchè ti hanno annoiato, ma che potrebbero invece essere utili o graditi ad altre persone.Prenota e ritira gli oggetti che desideri.</p>
                                             <a href="loginT.jsp" class="btn_2">Dona Ora</a>
                                         </div>
                                     </div>
@@ -105,17 +106,23 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="section_tittle text-center">
-                        <h2>Donazioni in evidenza</h2>
+                        <h2>Categorie in evidenza</h2>
                     </div>
                 </div>
             </div>
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-7 col-sm-6">
+                
                     <div class="single_feature_post_text">
-                        <p>Cat.Abbigliamento</p>
-                        <h3>Maglia Gucci Falsa</h3>
-                        <a href="#" class="feature_btn">EXPLORE NOW <i class="fas fa-play"></i></a>
-                        <img src="img/feature/feature_1.png" alt="">
+                    <img src="assets/img/catvestiti.jpg" width="682" height="400" alt="">
+                    <div class="single_feature_post_text">
+                    <p>Don App</p>
+                        <h3>Categoria Abbigliamento</h3>
+                        </div>
+                    
+                        
+                        <a href="#" class="feature_btn">Visita Ora <i class="fas fa-play"></i></a>
+                        
                     </div>
                 </div>
                 <div class="col-lg-5 col-sm-6">

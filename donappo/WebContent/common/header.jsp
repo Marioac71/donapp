@@ -44,7 +44,7 @@
                                     </div>
                                 </li>
                                    <li class="nav-item">
-                                    <a class="nav-link" href="aggiungi.jsp">
+                                    <a class="nav-link" href="aggiungiT.jsp">
                                     <i class="fas fa-plus-square"></i> Inserisci</a>
                                    </li>	
                        
@@ -76,8 +76,8 @@
         </div>
         <div class="search_input" id="search_input_box">
             <div class="container ">
-                <form class="d-flex justify-content-between search-inner">
-                    <input type="text" class="form-control" id="search_input" placeholder="Search Here">
+                <form action="barraRicerca" class="d-flex justify-content-between search-inner" method="post" >
+                    <input type="text" class="form-control" id="search_input" name="campo" placeholder="Search Here">
                     <button type="submit" class="btn"></button>
                     <span class="ti-close" id="close_search" title="Close Search"></span>
                 </form>

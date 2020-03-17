@@ -11,18 +11,34 @@ import donapp.model.Oggetto;
 
 public class OggettoDaoImpl implements OggettoDao {
 	
+	//Istanza DB
 	DbManager db;
+	
+	//Inserimento Oggetto
 	private PreparedStatement insertPs;
+	//Modifica Oggetto
 	private PreparedStatement updatePs;
+	//Eliminazione Oggetto
 	private PreparedStatement deletePs;
+	//Ricerca tutti gli oggetti dell'utente
 	private PreparedStatement searchPsAllOgg;
+	//Ricerca tutti gli oggetti inseriti dagli altri utenti
 	private PreparedStatement selectPsAllOgg;
+	//Effettua la prenotazione dell'oggetto
 	private PreparedStatement prenotaPsOgg;
+	//Cancella la prenotazione
 	private PreparedStatement cancellaPsPren;
+	//Modifica la foto dell'oggetto
 	private PreparedStatement updatePsFoto;
+	//Ricerca un oggetto specifico per l'id inserito
 	private PreparedStatement getPsOggetto;
+	//Restituisce tutte le prenotazioni
 	private PreparedStatement getAllPrenotation;
-	//COSTRUTTOREaxxh
+	//Restituisce un oggetto in base a un nome inserito
+	private PreparedStatement searchOggetto;
+	
+	
+	//COSTRUTTORE
 	public OggettoDaoImpl() {
 		String insertQry = "INSERT INTO oggetto (foto,nome,colore,descrizione,luogoritiro"
 				+ ",disponibilita,idproprietario,idprenotante,idcategoria) "
@@ -42,6 +58,7 @@ public class OggettoDaoImpl implements OggettoDao {
 		String cancellaPrenQry = "UPDATE oggetto set idprenotante=null where idoggetto=?";
 		String getOggettoQry="SELECT * FROM oggetto WHERE idoggetto=?";
 		String getAllPrenotationQry = "SELECT * FROM oggetto WHERE idprenotante=?";
+		String searchOggettoQry= "SELECT * FROM oggetto WHERE nome LIKE ?";
 		
 		try {
 			db=DbManager.getIstance("root","root");
@@ -55,6 +72,7 @@ public class OggettoDaoImpl implements OggettoDao {
 			updatePsFoto= db.getCon().prepareStatement(updateFoto);
 			getPsOggetto=db.getCon().prepareStatement(getOggettoQry);
 			getAllPrenotation=db.getCon().prepareStatement(getAllPrenotationQry);
+			searchOggetto=db.getCon().prepareStatement(searchOggettoQry);
 			
 		} catch (SQLException e) {
 			System.err.println("Errore nel costruttore");
@@ -295,6 +313,34 @@ public class OggettoDaoImpl implements OggettoDao {
 		try {
 			getAllPrenotation.setString(1,idprenotante);
 			ResultSet rs = getAllPrenotation.executeQuery();
+			while(rs.next()) {
+				Oggetto o = new Oggetto();
+				o.setIdOggetto(rs.getInt("idoggetto"));
+				o.setFoto(rs.getString("foto"));
+				o.setNome(rs.getString("nome"));
+				o.setColore(rs.getString("colore"));
+				o.setDescrizione(rs.getString("descrizione"));
+				o.setLuogoRitiro(rs.getString("luogoritiro"));
+				o.setDisponibilita(rs.getString("disponibilita"));
+				o.setIdProprietario(rs.getString("idproprietario"));
+				o.setIdPrenotante(rs.getString("idprenotante"));
+				o.setIdCategoria(rs.getInt("idcategoria"));
+				arrO.add(o);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return arrO;
+	}
+	
+	//METODO CHE RESTITUISCE UNA LISTA DI OGGETTI IN BASE AL NOME INSERITO NELLA BARRA DI RICERCA
+	
+	public ArrayList<Oggetto> ricercaOgg (String nome){
+		ArrayList<Oggetto> arrO = new ArrayList<Oggetto>();
+		try {
+			searchOggetto.setString(1, nome+"%");
+			ResultSet rs = searchOggetto.executeQuery();
 			while(rs.next()) {
 				Oggetto o = new Oggetto();
 				o.setIdOggetto(rs.getInt("idoggetto"));

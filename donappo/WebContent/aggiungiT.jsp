@@ -18,84 +18,78 @@
           <h2 class="contact-title">Inserisci il tuo prodotto</h2>
         </div>
         <div class="col-lg-8">
-          <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm"
-            novalidate="novalidate"> 
+          <form class="form-contact contact_form" action="InserimentoOggetto" method="post"enctype="multipart/form-data" id="contactForm"
+          novalidate="novalidate">
             <div class="row">
             	              <div class="col-sm-6">
                 <div class="form-group">
-                  <input class="form-control" name="name" id="name" type="text" onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Prodotto'" placeholder='Prodotto'>
+                  <input class="form-control" name="nome" id="name" type="text" onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Prodotto'" placeholder='Prodotto' value="">
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
-                  <input class="form-control" name="email" id="email" type="email" onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Colore'" placeholder='Colore'>
+                  <input class="form-control" name="colore" id="colore" type="text" onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Colore'" placeholder='Colore' >
                 </div>
               </div>
               <div class="col-12">
                 <div class="form-group">
 
-                  <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9"
+                  <textarea class="form-control w-100" name="descrizione" id="descrizione" cols="30" rows="9"
                     onfocus="this.placeholder = ''" onblur="this.placeholder = 'Descrizione Prodotto'"
-                    placeholder='Descrizione Prodotto'></textarea>
+                    placeholder='Descrizione Prodotto' value=""></textarea>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
-                  <input class="form-control" name="name" id="name" type="text" onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Inserisci nome'" placeholder='Inserisci nome'>
+                  <input class="form-control" name="luogoritiro" id="luogoritiro" type="text" onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Luogo ritiro'" placeholder='Luogo ritiro' value="">
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
-                  <input class="form-control" name="email" id="email" type="email" onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Inserisci email'" placeholder='Inserisci email'>
+                  <input class="form-control" name="disponibilita" id="disponibilita" type="date" onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Disponibile dal '" placeholder='Disponibile dal ' value="">
                 </div>
               </div>
-              <div class="col-12">
-                <div class="form-group">
-                  <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Indirizzo di ritiro'" placeholder='Indirizzo di ritiro'>
-                </div>
-              </div>
+             
               <div class="col-sm-6">
+               <div class="wrapper" >
+               <select name="idcategoria" id="idcategoria" class="form-control">			           
+                <option disabled selected>Categoria</option>
+                <option value=1>Casa</option>
+                <option value=2>Abbigliamento</option>
+                <option value=3>Elettronica</option>
+                <option value=4>Sport</option>
+            </select>
+                  </div>
+                </div>
+              <div class="col-sm-6">
+              
                 <div class="form-group">
-                  <input class="form-control" name="subject" id="subject" type="file" onfocus="this.placeholder = ''"
+                  <input class="form-control" name="img" id="img" type="file" accept="image/*" onfocus="this.placeholder = ''"
                     onblur="this.placeholder = 'Aggiungi foto'" placeholder='Aggiungi foto'>
-                       <div class="form-group mt-3">
-              					<a href="#" class="btn_3 button-contactForm" >Aggiungi foto</a>
-           			 </div>
                 </div>
               </div>
+              
             </div>
             <div class="form-group mt-3">
-              <a href="#" class="btn_3 button-contactForm" >Inserisci</a>
-            </div>
+             <input class="btn_3 button-contactForm"type="submit" value="Aggiungi">
+                         </div>
           </form>
         </div>
         <div class="col-lg-4">
-          <div class="media contact-info">
-            <span class="contact-info__icon"><i class="ti-home"></i></span>
-            <div class="media-body">
-              <h3>Buttonwood, California.</h3>
-              <p>Rosemead, CA 91770</p>
-            </div>
-          </div>
-          <div class="media contact-info">
-            <span class="contact-info__icon"><i class="ti-tablet"></i></span>
-            <div class="media-body">
-              <h3>00 (440) 9865 562</h3>
-              <p>Mon to Fri 9am to 6pm</p>
-            </div>
-          </div>
-          <div class="media contact-info">
-            <span class="contact-info__icon"><i class="ti-email"></i></span>
-            <div class="media-body">
-              <h3>support@colorlib.com</h3>
-              <p>Send us your query anytime!</p>
-            </div>
-          </div>
+         
+                    <div class="login_part_text text-center">
+                        <div class="login_part_text_iner">
+                            <h2>Nuovo Visitatore?</h2>
+                            <p>Ci sono tantissimi prodotti in donazione che
+                            aspettano solo te</p>
+                            <a href="#" class="btn_3">Crea un Account</a>
+                        </div>
+                    </div>
+               
         </div>
       </div>
      </div>
@@ -105,6 +99,33 @@
 					<%@ include file="common/footer.jsp"%>
 					<!--::footer_part end::-->
 					<!-- importare script -->
-					<%@ include file="common/script.jsp"%>
+					 <script src="assets/js/jquery-1.12.1.min.js"></script>
+    <!-- popper js -->
+    <script src="assets/js/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- easing js -->
+    <script src="assets/js/jquery.magnific-popup.js"></script>
+    <!-- swiper js -->
+    <script src="assets/js/swiper.min.js"></script>
+    <!-- swiper js -->
+    <script src="assets/js/masonry.pkgd.js"></script>
+    <!-- particles js -->
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- slick js -->
+    <script src="assets/js/slick.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/contact.js"></script>
+    <script src="assets/js/jquery.ajaxchimp.min.js"></script>
+    <script src="assets/js/jquery.form.js"></script>
+    
+    <script src="assets/js/mail-script.js"></script>
+    <!-- custom js -->
+    <script src="assets/js/custom.js"></script>
+    
+    <!-- importare file icone -->
+    <script src="https://kit.fontawesome.com/7eb2e67776.js" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.sql.Timestamp;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -25,10 +26,12 @@ import donapp.model.Oggetto;
 /**
  * Servlet implementation class UploadServlet
  */
-@WebServlet("/Inserimento2")
-public class Inserimento2 extends HttpServlet {
+@WebServlet("/InserimentoOggetto")
+public class InserimentoOggetto extends HttpServlet {
+	
+	
+	
 
-	private String filePath="";
 	private int maxFileSize = 200 * 1024;
 	private int maxMemSize = 4 * 1024;
 	private File file ;
@@ -39,7 +42,7 @@ public class Inserimento2 extends HttpServlet {
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public Inserimento2() {
+	public InserimentoOggetto() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -97,6 +100,9 @@ public class Inserimento2 extends HttpServlet {
 
 			// Parse the request to get file items.
 			FileItemIterator i = upload.getItemIterator(request);
+			String path = getServletContext().getRealPath("WEB-INF/../");
+			System.out.println(path);
+			String filePath=path+"//assets//img//";
 
 			while ( i.hasNext () ) {
 				FileItemStream fi = i.next();
@@ -111,21 +117,23 @@ public class Inserimento2 extends HttpServlet {
 
 					// Write the file
 					if( fileName.lastIndexOf("\\") >= 0 ) {
-						file = new File( filePath + fileName.substring( fileName.lastIndexOf("\\"))) ;
+						file = new File( filePath + fileName.substring( fileName.lastIndexOf("\\"))+estensione) ;
+						String fullPathToYourWebappRoot = file.getCanonicalPath();
 					} else {
-						file = new File( filePath + fileName.substring(fileName.lastIndexOf("\\")+1)) ;
+						file = new File( filePath + fileName.substring(fileName.lastIndexOf("\\")+1)+estensione) ;
+						String fullPathToYourWebappRoot = file.getCanonicalPath();
 					}
 					try (InputStream input = fi.openStream()) {
 						Files.copy(input, file.toPath());
 					}
-					out.println("Uploaded Filename: " + fileName + "<br>");
+		
 
 				}
 				else {
 					// Normal field
 					String name = fi.getFieldName(); //nome del campo, sarebbe quello che mettete nell'attributo name del tag input
 					String value = Streams.asString(fi.openStream()); // valore associato al nome
-					out.println(value + "<br>");
+			
 					switch (name) {
 
 					case "nome":
@@ -156,7 +164,8 @@ public class Inserimento2 extends HttpServlet {
 				
 				Oggetto x = new Oggetto(null,foto, nome, colore, descrizione, luogoritiro, disponibilita, idproprietario, idprenotante, intero);
 				
-				
+				RequestDispatcher dispatcher = request.getRequestDispatcher("yourOggetti.jsp");
+				dispatcher.forward(request, response);
 				Integer chiave;
 				chiave= a.insertOggetto(x);
 
