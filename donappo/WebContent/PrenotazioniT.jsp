@@ -44,7 +44,7 @@
                <th >Nome Prodotto</th>
                <th >ID Proprietario</th>
                <th >ID Prenotante</th>
-               <th >Elimina Prenotazione </th>
+               <th >Elimina Prenotazione</th>
               </tr>
               <c:forEach items="${mypren}" var="item">
               <tr>

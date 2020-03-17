@@ -45,7 +45,9 @@
                <th>Disponibilità</th>
                <th>Luogo ritiro</th>
                <th>Id Prenotante</th>
-              </tr>
+			   <th>Elimina Prenotazione</th>              
+			 </tr>
+			 <form action="Elimina" method="get" >
               <c:forEach items="${myogg}" var="item">
               <tr>
                 <td>
@@ -61,8 +63,10 @@
                 <td> <p>${item.disponibilita}</p></td>
                 <td> <p>${item.luogoRitiro}</p></td>
                 <td> <p>${item.idPrenotante}</p></td>
+                <td> <p></p> <input type="submit" class="btn_3" value="${item.idOggetto}"> Elimina</td>
               </tr>
               </c:forEach> 
+              </form>
             </tbody>
           </table>
         </div>
