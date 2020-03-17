@@ -8,6 +8,19 @@
 <html lang="zxx">
 
 <head>
+<style type="text/css">
+.btn-link {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    color: #0000EE;
+    padding: 0;
+    text-decoration: underline;
+    font-family: inherit;
+    font-size: inherit;
+}
+</style>
     <!-- Required meta tags -->
 	<%@ include file = "common/head.jsp" %> 
 </head>
@@ -46,21 +59,22 @@
                                 <h3>Categoria Prodotti</h3>
                             </div>
                             <div class="widgets_inner">
+                            <form action="index.php" method="GET">
                                 <ul class="list">
                                     <li>
-                                        <a href="#">Elettronica</a>
+                                        <button type="submit" name="categoria" value="1" class="btn-link">Abbigliamento</button>
                                       
                                     </li>
                                     <li>
-                                        <a href="#">Abbigliamento</a>
+                                        <button type="submit" name="categoria" value="2" class="btn-link">Elettronica</button>
                                      
                                     </li>
                                     <li>
-                                        <a href="#">Arredamento</a>
+                                        <button type="submit" name="categoria" value="3" class="btn-link">Sport</button>
                                  
                                     </li>
                                     <li>
-                                        <a href="#">Articoli Sportivi</a>
+                                        <button type="submit" name="categoria" value="4" class="btn-link">Arredamento</button>
                                      </li>  
                                     
                                     <!--  </li>
@@ -74,6 +88,7 @@
                                     </li>
                                     -->
                                 </ul>
+                                </form>
                             </div>
                         </aside>
 
