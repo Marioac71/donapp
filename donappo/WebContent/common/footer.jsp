@@ -5,7 +5,7 @@
         <div class="copyright_part">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8" style="margin-left: 400px">
+                    <div class="col-lg-8" style="margin-left: 400px; margin-top: -150px">
                     	<img src="accenture-technologyLogo.png">
                        	 <div class="copyright_text" style="margin-left: 50px; margin-bottom: 50px">    
                             <P><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->

@@ -50,7 +50,7 @@ alert ("Username o Password errati");
                             <h2>Nuovo Visitatore?</h2>
                             <p>Ci sono tantissimi prodotti in donazione che
                             aspettano solo te</p>
-                            <a href="#" class="btn_3">Crea un Account</a>
+                            <a href="registrazioneT.jsp" class="btn_3">Crea un Account</a>
                         </div>
                     </div>
                 </div>

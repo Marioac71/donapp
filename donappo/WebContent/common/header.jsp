@@ -26,7 +26,7 @@
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
                                         <a class="dropdown-item" href="searchOggetti"> categoria prodotti</a>
-                                        <a class="dropdown-item" href="single-product.html">Prodotti singoli</a>
+                
                                         
                                     </div>
                                 </li>

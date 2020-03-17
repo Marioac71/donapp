@@ -81,14 +81,13 @@
         </div>
         <div class="col-lg-4">
          
-                    <div class="login_part_text text-center">
+                 
+                    <img height="500px" width="1000px" src="assets\img\2.jpeg">
+                
                         <div class="login_part_text_iner">
-                            <h2>Nuovo Visitatore?</h2>
-                            <p>Ci sono tantissimi prodotti in donazione che
-                            aspettano solo te</p>
-                            <a href="#" class="btn_3">Crea un Account</a>
+
                         </div>
-                    </div>
+                   
                
         </div>
       </div>
