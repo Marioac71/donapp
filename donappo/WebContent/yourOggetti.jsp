@@ -67,7 +67,8 @@
                 <td> <p>${item.luogoRitiro}</p></td>
                 <td> <p>${item.idPrenotante}</p></td>
                 
-                <td> <p></p> <input type="hidden" name="idoggetto" value="${item.idOggetto}"><input type="submit" class="btn_3" value="Elimina"></td>
+                <td> <input type="hidden" name="idoggetto" value="${item.idOggetto}">
+                <input type="submit" class="btn_3" value="Elimina"></td>
              
               </tr>
                

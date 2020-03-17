@@ -36,6 +36,7 @@
     <div class="container">
       <div class="cart_inner">
         <div class="table-responsive">
+         <form action="servletEliminaOgg" method="get" >
           <table class="table" >
           <tbody>
               <tr>
@@ -61,11 +62,13 @@
                 <td> <p>${item.nome}</p></td>
                 <td> <p>${item.idProprietario}</p></td>
                 <td> <p>${item.idPrenotante}</p></td>
-                <td> <p></p> <a href="" class="btn_3">Elimina</a>      </td>
+                <td> <input type="hidden" name="idoggetto" value="${item.idOggetto}">
+                <input type="submit" class="btn_3" value="Elimina"></td>
               </tr>
               </c:forEach> 
             </tbody>
           </table>
+          </form>
         </div>
       </div>
       </div>
