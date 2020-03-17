@@ -9,15 +9,23 @@ import java.util.ArrayList;
 import donapp.dao.CategoriaDao;
 import donapp.dbmanager.DbManager;
 import donapp.model.Categoria;
+import donapp.model.Oggetto;
 
 public class CategoriaDaoImpl implements CategoriaDao {
 	
 	DbManager db;
+	//Inserimento per una categoria
 	private PreparedStatement insertPs;
+	//Modifica una categoria
 	private PreparedStatement updatePs;
+	//Elimina una categoria
 	private PreparedStatement deletePs;
+	//Restituisce una categoria
 	private PreparedStatement selectPsCat;
+	//Restituisce tutte le categorie
 	private PreparedStatement selectPsAllCat;
+	//Restituisce tutti gli oggetti di una determinata categoria
+	private PreparedStatement categoriaPsOggetto;
 	//COSTRUTTOREa
 	public CategoriaDaoImpl() {
 		String insertQry="INSERT INTO categoria (idcategoria,nome) "
@@ -29,13 +37,18 @@ public class CategoriaDaoImpl implements CategoriaDao {
 		String selectCatQry="SELECT * FROM categoria WHERE idcategoria=?";
 		
 		String selectAllCatQry="SELECT * FROM categoria";
+		
+		String categoriaAllOggettiQry="Select * from new_view where (idproprietario!=? AND idcategoria=?)";
+		
 		try {
-			
+			db=DbManager.getIstance("root","root");
 			insertPs = db.getCon().prepareStatement(insertQry);
 			updatePs = db.getCon().prepareStatement(updateQry);
 			deletePs = db.getCon().prepareStatement(deleteQry);
 			selectPsCat = db.getCon().prepareStatement(selectCatQry);
 			selectPsAllCat = db.getCon().prepareStatement(selectAllCatQry);
+			categoriaPsOggetto=db.getCon().prepareStatement(categoriaAllOggettiQry);
+			
 		} catch (SQLException e) {
 			System.err.println("Errore nel costruttore");
 			e.printStackTrace();
@@ -135,5 +148,34 @@ public class CategoriaDaoImpl implements CategoriaDao {
 		}
 		return c;
 	}
+	
+	public ArrayList<Oggetto> getAllOggettiCat(String username, int idcategoria) {
+		ArrayList<Oggetto> arrO = new ArrayList<Oggetto>();
+		try {
+			categoriaPsOggetto.setString(1, username);
+			categoriaPsOggetto.setInt(2, idcategoria);
+			ResultSet rs = categoriaPsOggetto.executeQuery();
+			while(rs.next()) {
+				Oggetto o = new Oggetto();
+				o.setIdOggetto(rs.getInt("idoggetto"));
+				o.setFoto(rs.getString("foto"));
+				o.setNome(rs.getString("nome"));
+				o.setColore(rs.getString("colore"));
+				o.setDescrizione(rs.getString("descrizione"));
+				o.setLuogoRitiro(rs.getString("luogoritiro"));
+				o.setDisponibilita(rs.getString("disponibilita"));
+				o.setIdProprietario(rs.getString("idproprietario"));
+				o.setIdPrenotante(rs.getString("idprenotante"));
+				o.setIdCategoria(rs.getInt("idcategoria"));
+				arrO.add(o);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return arrO;
+	}
+
+
 
 }

@@ -58,10 +58,10 @@
                <div class="wrapper" >
                <select name="idcategoria" id="idcategoria" class="form-control">			           
                 <option disabled selected>Categoria</option>
-                <option value=1>Casa</option>
-                <option value=2>Abbigliamento</option>
-                <option value=3>Elettronica</option>
-                <option value=4>Sport</option>
+                <option value=1>Arredamento</option>
+                <option value=2>Elettronica</option>
+                <option value=3>Sport</option>
+                <option value=4>Abbigliamento</option>
             </select>
                   </div>
                 </div>

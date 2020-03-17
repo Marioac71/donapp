@@ -117,24 +117,20 @@
                     </div>
                 </div>
             </div>
+            <form action="servletCategoria" method="get">
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-7 col-sm-6">
                     <div class="single_feature_post_text" style="background-image: url(assets/img/catvest.jpg);background-size: 682px 310px; background-repeat: no-repeat; background-position: 0% 100% ">
                     <p>Cat.Abbigliamento</p>
                         <h2>Abbigliamento</h2>
-                    	
-                        
- 
-                        <a href="#" class="feature_btn">VISITA ORA <i class="fas fa-play"></i></a>
-                  
-                        
+                        <button type="submit" name="categoria" value="4" class="feature_btn">VISITA ORA<i class="fas fa-play"></i></button> 
                     </div>
                 </div>
                 <div class="col-lg-5 col-sm-6">
                     <div class="single_feature_post_text" style="background-image: url(assets/img/catele.jpg); background-size: 487px 310px; background-repeat: no-repeat; background-position: 0% 100%">
                    <p>Cat.Elettronica</p>
                         <h2>Elettronica</h2>
-                        <a href="#" class="feature_btn">VISITA ORA <i class="fas fa-play"></i></a>
+                         <button type="submit" name="categoria" value="2" class="feature_btn">VISITA ORA<i class="fas fa-play"></i></button>
                         <img src="img/feature/feature_2.png" alt="">
                     </div>
                 </div>
@@ -142,7 +138,7 @@
                     <div class="single_feature_post_text" style="background-image: url(assets/img/catsport.jpg); background-size: 487px 310px; background-repeat: no-repeat; background-position: 0% 100%">
                         <p>Cat.Sport</p>
                         <h2>Articoli sportivi</h2>
-                        <a href="#" class="feature_btn">VISITA ORA <i class="fas fa-play"></i></a>
+                        <button type="submit" name="categoria" value="3" class="feature_btn">VISITA ORA<i class="fas fa-play"></i></button>
                         <img src="img/feature/feature_3.png" alt="">
                     </div>
                 </div>
@@ -150,11 +146,12 @@
                     <div class="single_feature_post_text" style="background-image: url(assets/img/catarr.jpg); background-size: 652px 300px; background-repeat: no-repeat; background-position: 0% 100%">
                         <p>Cat.Arredamento</p>
                         <h2>Per la casa</h2>
-                        <a href="#" class="feature_btn">VISITA ORA <i class="fas fa-play"></i></a>
+                       <button type="submit" name="categoria" value="1" class="feature_btn">VISITA ORA<i class="fas fa-play"></i></button>
                         <img src="img/feature/feature_4.png" alt="">
                     </div>
                 </div>
             </div>
+          </form>
         </div>
     </section>
     <!-- upcoming_event part start-->

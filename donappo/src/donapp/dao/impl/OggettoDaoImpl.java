@@ -38,6 +38,7 @@ public class OggettoDaoImpl implements OggettoDao {
 	private PreparedStatement searchOggetto;
 	
 	
+	
 	//COSTRUTTORE
 	public OggettoDaoImpl() {
 		String insertQry = "INSERT INTO oggetto (foto,nome,colore,descrizione,luogoritiro"

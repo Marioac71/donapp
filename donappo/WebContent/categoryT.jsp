@@ -59,10 +59,10 @@
                                 <h3>Categoria Prodotti</h3>
                             </div>
                             <div class="widgets_inner">
-                            <form action="index.php" method="GET">
+                            <form action="servletCategoria" method="GET">
                                 <ul class="list">
                                     <li>
-                                        <button type="submit" name="categoria" value="1" class="btn-link">Abbigliamento</button>
+                                        <button type="submit" name="categoria" value="1" class="btn-link">Arredamento</button>
                                       
                                     </li>
                                     <li>
@@ -74,7 +74,7 @@
                                  
                                     </li>
                                     <li>
-                                        <button type="submit" name="categoria" value="4" class="btn-link">Arredamento</button>
+                                        <button type="submit" name="categoria" value="4" class="btn-link">Abbigliamento</button>
                                      </li>  
                                     
                                     <!--  </li>

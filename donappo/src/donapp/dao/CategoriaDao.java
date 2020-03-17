@@ -1,6 +1,7 @@
 package donapp.dao;
 import java.util.ArrayList;
 import donapp.model.Categoria;
+import donapp.model.Oggetto;
 
 public interface CategoriaDao {
 
@@ -12,5 +13,6 @@ public interface CategoriaDao {
 	//METODI
 	public ArrayList <Categoria> getAllCategorie();
 	public Categoria getCategoria(int idCategoria);
+	public ArrayList<Oggetto> getAllOggettiCat(String username,int idCategoria);
 	
 }

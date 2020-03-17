@@ -1,6 +1,6 @@
 package donapp.servlet;
 
-import java.io.File;
+import java.io.File; 
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -74,6 +74,7 @@ public class InserimentoOggetto extends HttpServlet {
 		String estensione=null;
 		String idcategoria=null;
 		String fileName=null;
+		
 		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 		
 		

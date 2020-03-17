@@ -1,11 +1,18 @@
 package donapp.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import donapp.dao.impl.CategoriaDaoImpl;
+import donapp.model.Oggetto;
 
 /**
  * Servlet implementation class servletCategoria
@@ -27,7 +34,22 @@ public class servletCategoria extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+	
+		
+		HttpSession session= request.getSession();
+		String username=(String)session.getAttribute("username");
+		String categoria=request.getParameter("categoria");
+		
+		CategoriaDaoImpl c= new CategoriaDaoImpl();
+		
+		int a= Integer.parseInt(categoria);
+		
+		ArrayList <Oggetto> x= new ArrayList();
+		x=c.getAllOggettiCat(username,a);
+		
+		request.setAttribute("listaogg", x);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("categoryT.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	/**
