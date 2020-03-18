@@ -10,13 +10,8 @@
     		%>
     		<jsp:forward page="indexT.jsp"/>
    		<% }
-    	else {
     		%>
-<script type="text/javascript">
-alert ("Username o Password errati");
-</script>
-    	<% }
-    	 %>
+
     		
     <% 
 
@@ -62,7 +57,18 @@ alert ("Username o Password errati");
                         <Center><img src="assets/img/LogoDonApp.png" alt="logo" height="84px" width="244px"></Center>
                             <Center><h3>Bentornato<br>
                                 Accedi con i tuoi dati</h3></Center>
-                            <form class="row contact_form" action="Login" method="post" novalidate="novalidate">
+						
+							<%
+							Boolean error=(Boolean)request.getAttribute("error");
+                                if(error!=null && error){ %>
+                                	<div class="alert alert-danger" role="alert">
+                                	  Username o Password errati
+                                	</div>
+                              <%  }
+							%>
+
+
+							<form class="row contact_form" action="Login" method="post" novalidate="novalidate">
                                 <div class="col-md-12 form-group p_star">
                                     <input type="text" class="form-control" id="name" name="username" value=""
                                         placeholder="Username">

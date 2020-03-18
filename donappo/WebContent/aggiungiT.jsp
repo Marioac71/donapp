@@ -1,5 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+    <% 
+    	Boolean x=(Boolean)session.getAttribute("loggato");
+    	System.out.println("x = "+x);
+    	if(x==null || !x) {
+    		System.out.println(x);
+    		 response.sendRedirect("loginT.jsp");
+    	}  
+
+     
+    %>
 <!DOCTYPE html>
 <html>
 <head>

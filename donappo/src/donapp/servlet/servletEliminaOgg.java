@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import donapp.dao.impl.OggettoDaoImpl;
 
@@ -37,9 +38,11 @@ public class servletEliminaOgg extends HttpServlet {
 		OggettoDaoImpl o = new OggettoDaoImpl();
 		int ido = Integer.parseInt(idogg);
 		o.deleteOggetto(ido);
+		HttpSession session= request.getSession();
+		session.setAttribute("typemessage", "warning");
+		session.setAttribute("message", "Eliminazione articolo eseguita correttamente");
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("yourOggetti.jsp");
-		dispatcher.forward(request, response);
+		response.sendRedirect("GetAllMyOggetti");
 	}
 
 	/**

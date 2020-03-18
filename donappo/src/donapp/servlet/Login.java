@@ -1,6 +1,6 @@
 package donapp.servlet;
 
-import java.io.IOException;      
+import java.io.IOException;       
 import donapp.model.*; 
 import java.io.PrintWriter;
 
@@ -73,10 +73,15 @@ public class Login extends HttpServlet {
 			
 		}
 		else {
-
+			request.setAttribute("error", true);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("loginT.jsp");
 			dispatcher.forward(request, response);
-			
+//			PrintWriter out = response.getWriter();
+//			   out.println("<script type=\"text/javascript\">");
+//			   out.println("alert('User or password incorrect');");
+//			   out.println("location='loginT.jsp';");
+//			   out.println("</script>");
+			   
 		}
 		
 	}

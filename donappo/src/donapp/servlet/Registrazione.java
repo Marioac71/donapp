@@ -53,9 +53,12 @@ public class Registrazione extends HttpServlet {
 		Utente utente = new Utente(username, password, nome, cognome, email);
 		boolean flag = false;
 		flag = u.insertUtente(utente);
-
-		RequestDispatcher dispatcher = request.getRequestDispatcher("loginT.jsp");
-		dispatcher.forward(request, response);
+		HttpSession session= request.getSession();
+		session.setAttribute("typemessage", "success");
+		session.setAttribute("message", "Registrazione avvenuta, effettua il login");
+		response.sendRedirect("loginT.jsp");
+//		RequestDispatcher dispatcher = request.getRequestDispatcher("loginT.jsp");
+//		dispatcher.forward(request, response);
 
 		
 	}

@@ -21,7 +21,7 @@
         <div class="col-lg-8">
           <div class="breadcrumb_iner">
             <div class="breadcrumb_iner_item">
-              <h2>Lista delle tue prenotazioni!</h2>
+              <h2>Lista delle tue prenotazioni</h2>
               <p>Home <span>-</span>Prenotazioni</p>
             </div>
           </div>
@@ -35,6 +35,17 @@
   <section class="cart_area padding_top">
     <div class="container">
       <div class="cart_inner">
+      <%
+      		String s = (String)session.getAttribute("typemessage");
+      		if(s!=null && !s.equals(""))
+      		{
+      			%>
+      			<div class="alert alert-<%=s %>"><%=(String)session.getAttribute("message")%></div>      			
+      			<%
+      			session.removeAttribute("typemessage");
+      			session.removeAttribute("message");
+      		}
+      	%>
         <div class="table-responsive">
          <form action="EliminaPrenotazione" method="get" >
           <table class="table" >

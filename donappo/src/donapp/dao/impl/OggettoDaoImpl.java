@@ -99,6 +99,7 @@ public class OggettoDaoImpl implements OggettoDao {
 			insertPs.setString(7, o.getIdProprietario());
 			insertPs.setString(8, o.getIdPrenotante());
 			insertPs.setInt(9, o.getIdCategoria());
+			System.out.println(insertPs);
 			
 			int righe = insertPs.executeUpdate();
 			if(righe>0) {
@@ -153,6 +154,7 @@ public class OggettoDaoImpl implements OggettoDao {
 		boolean flag=false;
 		try {
 			deletePs.setInt(1, idOggetto);
+			System.out.println(deletePs);
 			
 			int righe = deletePs.executeUpdate();
 			if(righe>0) {

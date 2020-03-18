@@ -36,6 +36,17 @@
   <section class="cart_area padding_top">
     <div class="container">
       <div class="cart_inner">
+      	<%
+      		String s = (String)session.getAttribute("typemessage");
+      		if(s!=null && !s.equals(""))
+      		{
+      			%>
+      			<div class="alert alert-<%=s %>"><%=(String)session.getAttribute("message")%></div>      			
+      			<%
+      			session.removeAttribute("typemessage");
+      			session.removeAttribute("message");
+      		}
+      	%>
         <div class="table-responsive">
         <form action="servletEliminaOgg" method="get" >
           <table class="table" >
@@ -46,7 +57,7 @@
                <th>Disponibilità</th>
                <th>Luogo ritiro</th>
                <th>Id Prenotante</th>
-			   <th>Elimina Prenotazione</th>              
+			   <th>Elimina Oggetto</th>              
 			 </tr>
 			 
               <c:forEach items="${myogg}" var="item">

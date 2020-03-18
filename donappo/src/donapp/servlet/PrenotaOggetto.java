@@ -49,13 +49,13 @@ public class PrenotaOggetto extends HttpServlet {
 		System.out.println(flag);
 		if (flag == true)
 		{
-			RequestDispatcher dispatcher = request.getRequestDispatcher("categoryT.jsp");
-			dispatcher.forward(request, response);
+			session.setAttribute("typemessage", "success");
+			session.setAttribute("message", "Prenotazione avvenuta con successo");
+			response.sendRedirect("GetAllPrenotation");
 		}
 		else
 		{
-			RequestDispatcher dispatcher = request.getRequestDispatcher("indexT.jsp");
-			dispatcher.forward(request, response);
+			response.sendRedirect("indexT.jsp");
 		}
 	}
 

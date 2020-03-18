@@ -62,6 +62,8 @@ public class InserimentoOggetto extends HttpServlet {
 		// TODO Auto-generated method stub
 		// Check that we have a file upload request
 	HttpSession session= request.getSession();
+	
+
 		
 		String foto=null;
 		String nome=null;
@@ -165,15 +167,19 @@ public class InserimentoOggetto extends HttpServlet {
 				
 				Oggetto x = new Oggetto(null,foto, nome, colore, descrizione, luogoritiro, disponibilita, idproprietario, idprenotante, intero);
 				
-				RequestDispatcher dispatcher = request.getRequestDispatcher("yourOggetti.jsp");
-				dispatcher.forward(request, response);
 				Integer chiave;
 				chiave= a.insertOggetto(x);
+				session.setAttribute("typemessage", "success");
+				session.setAttribute("message", "Inserimento articolo eseguito correttamente");
+				response.sendRedirect("GetAllMyOggetti");
 
 		} catch(Exception ex) {
 			ex.printStackTrace();
 		
 		}
 	}
+	
+	
+	}
 
-}
+

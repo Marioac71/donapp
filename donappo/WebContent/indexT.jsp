@@ -36,12 +36,12 @@
                                             Un progetto partecipativo dove ridare vita agli oggetti che non usiamo più, 
                                             diminuire i consumi di risorse e il nostro impatto sull'ambiente 
                                             oltre che risparmiare anche a livello economico!</p>
-                                            <a href="loginT.jsp" class="btn_2">Dona Ora</a>
+                                            <a href="aggiungiT.jsp" class="btn_2">Dona Ora</a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="banner_img d-none d-lg-block">
-                                    <img src="assets/img/manigiu.jpeg" height="300px" width="300px" style="margin-right: 100px">
+                                <div class="banner_img d-none d-lg-block" style="margin-right: 200px;">
+                                    <img src="assets/img/manigi.jpeg" height="370px" width="370px" >
                                 </div>
                             </div>
                         </div><div class="single_banner_slider">
@@ -60,8 +60,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="banner_img d-none d-lg-block">
-                                    <img src="assets/img/rius.jpeg" height="350px" width="550px" style="margin-right: 100px" >
+                                <div class="banner_img d-none d-lg-block" style="margin-right: 100px">
+                                    <img src="assets/img/rius.jpeg" height="400px" width="550px"  >
                                 </div>
                             </div>
                         </div><!--<div class="single_banner_slider">

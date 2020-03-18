@@ -4,6 +4,16 @@
 <%@taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@page import="java.util.*"%>
+ <% 
+    	Boolean x=(Boolean)session.getAttribute("loggato");
+    	System.out.println("x = "+x);
+    	if(x==null || !x) {
+    		System.out.println(x);
+    		 response.sendRedirect("loginT.jsp");
+    	}  
+
+     
+    %>
 <!doctype html>
 <html lang="zxx">
 
@@ -120,8 +130,7 @@
 											<input type="hidden" name="idoggetto" value="${item.idOggetto}">
 											 <a onclick="document.getElementById('${item.idOggetto}').submit()"> ${item.nome}</a>
 											<h3>${item.idProprietario}</h3>
-											<a href="#" class="add_cart">+ add to cart<i
-												class="ti-heart"></i></a>
+											
 									</form>
 									</div>
 								</div>
