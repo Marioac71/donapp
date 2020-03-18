@@ -24,7 +24,7 @@
       <div class="row s_product_inner justify-content-between">
         <div class="col-lg-7 col-xl-7">
           <div class="product_slider_img">
-          <jsp:useBean id="oggetto" scope="session" class="donapp.model.Oggetto"/>
+          <jsp:useBean id="oggetto" scope="session" class="donapp.model.OggettoDto"/>
           <jsp:setProperty property="*" name="oggetto" />
             <div id="vertical">
              <div data-thumb="<jsp:getProperty property="foto" name="oggetto"/>" class="lslide active" style="height: 450px; margin-bottom: 0px;">
@@ -43,11 +43,16 @@
             <ul class="list">
               <li>
                 <a class="active" >
-                  <span>Categoria:</span><jsp:getProperty property="idCategoria" name="oggetto"/></a>
+                  <span>Categoria:</span><jsp:getProperty property="nomeCat" name="oggetto"/></a>
               </li>
               <li>
               
                 Disponibile dal:  <a class="active"><jsp:getProperty property="disponibilita" name="oggetto"/></a>
+              </li>
+              
+               <li>
+              
+                Proprietario:  <a class="active"><jsp:getProperty property="idProprietario" name="oggetto"/></a>
               </li>
               
 

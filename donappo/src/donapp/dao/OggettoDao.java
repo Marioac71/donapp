@@ -2,6 +2,7 @@ package donapp.dao;
 
 import java.util.ArrayList;
 import donapp.model.Oggetto;
+import donapp.model.OggettoDto;
 
 public interface OggettoDao {
 	
@@ -16,7 +17,7 @@ public interface OggettoDao {
 	public boolean prenotaOggetto(String username,int idOggetto);
 	public boolean deletePrenotazione(int idOggetto);
 	public boolean updateFoto(int idoggetto, String foto);
-	public Oggetto getOggetto(int idoggetto);
+	public OggettoDto getOggetto(int idoggetto);
 	public ArrayList<Oggetto> getAllPrenotation(String username);
 	public ArrayList<Oggetto> ricercaOgg (String nome);
 

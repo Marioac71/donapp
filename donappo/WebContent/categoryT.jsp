@@ -128,8 +128,9 @@
 
 
 											<input type="hidden" name="idoggetto" value="${item.idOggetto}">
-											 <a onclick="document.getElementById('${item.idOggetto}').submit()"> ${item.nome}</a>
-											<h3>${item.idProprietario}</h3>
+											 <a onclick="document.getElementById('${item.idOggetto}').submit()"> Visualizza</a>
+											<h3>${item.nome}</h3>
+											
 											
 									</form>
 									</div>

@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import donapp.dao.impl.OggettoDaoImpl;
 import donapp.model.Oggetto;
+import donapp.model.OggettoDto;
 
 /**
  * Servlet implementation class Oggetto
@@ -40,7 +41,7 @@ public class GetOgg extends HttpServlet {
 		
 		OggettoDaoImpl o= new OggettoDaoImpl(); 
 		
-		Oggetto x= new Oggetto();
+		OggettoDto x= new OggettoDto();
 		
 		x= o.getOggetto(idogg);
 		

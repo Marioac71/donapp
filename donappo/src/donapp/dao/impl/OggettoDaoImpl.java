@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import donapp.dao.OggettoDao;
 import donapp.dbmanager.DbManager;
 import donapp.model.Oggetto;
+import donapp.model.OggettoDto;
 
 public class OggettoDaoImpl implements OggettoDao {
 	
@@ -57,7 +58,7 @@ public class OggettoDaoImpl implements OggettoDao {
 		String selectAllOggQry = "Select * from new_view where (idproprietario!=?)"; 
 		String prenotaOggQry = "update oggetto set idprenotante=? where idoggetto=?";
 		String cancellaPrenQry = "UPDATE oggetto set idprenotante=null where idoggetto=?";
-		String getOggettoQry="SELECT * FROM oggetto WHERE idoggetto=?";
+		String getOggettoQry="SELECT *, categoria.nome FROM oggetto JOIN categoria ON oggetto.idcategoria=categoria.idcategoria WHERE idoggetto=?";
 		String getAllPrenotationQry = "SELECT * FROM oggetto WHERE idprenotante=?";
 		String searchOggettoQry= "SELECT * FROM oggetto WHERE nome LIKE ?";
 		
@@ -275,9 +276,9 @@ public class OggettoDaoImpl implements OggettoDao {
 		return flag;
 	}
 	
-	public Oggetto getOggetto(int idOggetto) {
+	public OggettoDto getOggetto(int idOggetto) {
 		
-		Oggetto o= new Oggetto();
+		OggettoDto o= new OggettoDto();
 		
 		try {
 			
@@ -298,6 +299,8 @@ public class OggettoDaoImpl implements OggettoDao {
 				o.setIdProprietario(rs.getString("idproprietario"));
 				o.setIdPrenotante(rs.getString("idprenotante"));
 				o.setIdCategoria(rs.getInt("idcategoria"));
+				o.setNomeCat(rs.getString("categoria.nome"));
+			
 				
 				
 			}

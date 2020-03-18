@@ -56,7 +56,7 @@
                                             per acquisti sbagliati o semplicemente perchè ti hanno annoiato, 
                                             ma che potrebbero invece essere utili o graditi ad altre persone.<br>
                                             <b>Prenota</b> e <b>Ritira</b> gli oggetti che desideri.</p>
-                                            <a href="loginT.jsp" class="btn_2">Dona Ora</a>
+                                            <a href="aggiungiT.jsp" class="btn_2">Dona Ora</a>
                                         </div>
                                     </div>
                                 </div>
