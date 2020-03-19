@@ -47,7 +47,7 @@
       		}
       	%>
         <div class="table-responsive">
-         <form action="EliminaPrenotazione" method="get" >
+         
           <table class="table" >
           <tbody>
               <tr>
@@ -59,6 +59,7 @@
                <th >Elimina Prenotazione</th>
               </tr>
               <c:forEach items="${mypren}" var="item">
+              <form action="EliminaPrenotazione" method="get" id="${item.idOggetto}" >
               <tr>
                 <td>
                   <div class="media">
@@ -76,10 +77,11 @@
                 <td> <input type="hidden" name="idoggetto" value="${item.idOggetto}">
                 <input type="submit" class="btn_3" value="Elimina"></td>
               </tr>
+              </form>
               </c:forEach> 
             </tbody>
           </table>
-          </form>
+          
         </div>
       </div>
       </div>

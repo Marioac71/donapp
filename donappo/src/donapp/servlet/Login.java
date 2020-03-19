@@ -66,7 +66,7 @@ public class Login extends HttpServlet {
 			session.setAttribute("password", password);
 			session.setAttribute("utente", x);
 			
-			session.setMaxInactiveInterval(120);
+			session.setMaxInactiveInterval(363);
 			
 			RequestDispatcher dispatcher = request.getRequestDispatcher("indexT.jsp");
 			dispatcher.forward(request, response);

@@ -33,12 +33,12 @@ public class servletEliminaOgg extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 	response.getWriter().append("Served at: ").append(request.getContextPath());
-		
+	HttpSession session= request.getSession();
 		String idogg = request.getParameter("idoggetto");
 		OggettoDaoImpl o = new OggettoDaoImpl();
 		int ido = Integer.parseInt(idogg);
 		o.deleteOggetto(ido);
-		HttpSession session= request.getSession();
+		
 		session.setAttribute("typemessage", "warning");
 		session.setAttribute("message", "Eliminazione articolo eseguita correttamente");
 		
